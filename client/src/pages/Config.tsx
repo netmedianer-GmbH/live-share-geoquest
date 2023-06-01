@@ -2,12 +2,14 @@ import * as microsoftTeams from "@microsoft/teams-js";
 import { Title2, Subtitle2 } from "@fluentui/react-components";
 import styles from "../styles/Config.module.scss";
 import { useRef, useEffect } from "react";
+import { app } from "@microsoft/teams-js";
 
 export const Config = () => {
 	const isInitializing = useRef(false);
 
 	useEffect(() => {
 		const init = async () => {
+			await app.initialize();
 			microsoftTeams.pages.config.registerOnSaveHandler(function (saveEvent) {
 				microsoftTeams.pages.config.setConfig({
 					suggestedDisplayName: "GeoQuest",

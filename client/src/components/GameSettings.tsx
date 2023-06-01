@@ -4,7 +4,7 @@ import { AppGameState, defaultPosition } from "../utils/constants";
 import { LiveGameContext, ILiveGameContext, IPosition, ILiveGameUser } from "./LiveShareContextProvider";
 import { QuestionType as QUESTION_TYPE, QuestionsHelper } from "../utils/QuestionsHelper";
 import { DistanceHelper } from "../utils";
-// import { UserList } from "./UserList";
+import { UserList } from "./UserList";
 import styles from "../styles/GameSettings.module.scss";
 import { TILE_PROVIDER } from "../utils/MapProvider";
 import { useLocalStorage } from "usehooks-ts";
@@ -159,6 +159,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		</Select>
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Users</Divider>
-		{/* <UserList showScore={true} showDistance={true} size="extra-small" /> */}
+		<UserList showScore={true} showDistance={true} size="extra-small" />
 	</>;
 }
