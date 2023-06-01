@@ -8,6 +8,8 @@ import { DistanceHelper } from "../utils";
 import styles from "../styles/GameSettings.module.scss";
 import { TILE_PROVIDER } from "../utils/MapProvider";
 import { useLocalStorage } from "usehooks-ts";
+import { ShareScreenStartRegular } from "@fluentui/react-icons";
+import { meeting, SdkError } from "@microsoft/teams-js";
 
 type GameSettingsProps = {
 	// children: ReactNode,
@@ -18,6 +20,18 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 	const [, setPersistedTileProvider] = useLocalStorage<TILE_PROVIDER>("spotalotTileProvider", TILE_PROVIDER.WATERCOLOR_BACKGROUND);
 	const [persistedQuestionType, setPersistedQuestionType] = useLocalStorage<QUESTION_TYPE>("spotalotQuestionType", QUESTION_TYPE.CAPITALS);
 
+
+	// Share Button
+	const onShareButtonClick = () => {
+		meeting.shareAppContentToStage(
+			(error: SdkError | null) => {
+				if (error) {
+					console.error("::: ERROR when doing shareAppContentToStage()", error);
+				}
+			},
+			`${window.location.origin}/stage?inTeams=true`
+		);
+	};
 
 	// Game control
 	const onGameControlBtn = (nextState: AppGameState) => {
@@ -107,6 +121,14 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 	const questionTypes = Object.entries(QUESTION_TYPE).map(([key, value]) => ({ key, value }));
 
 	return <>
+		<Button
+			className={styles.shareButton}
+			size="large"
+			icon={<ShareScreenStartRegular />}
+			appearance="primary"
+			onClick={onShareButtonClick}
+		>Share app to stage</Button>
+
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game control</Divider>
 		<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={(gameState.status === AppGameState.ONBOARDING) ? "primary" : "outline"}>Onboarding</Button>
 		<Button onClick={() => onGameControlBtn(AppGameState.PREPARING)} appearance={(gameState.status === AppGameState.PREPARING) ? "primary" : "outline"}>Pre-round</Button>

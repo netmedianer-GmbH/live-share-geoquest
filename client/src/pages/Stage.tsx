@@ -4,7 +4,7 @@ import { TestLiveShareHost } from "@microsoft/live-share";
 import { LiveShareHost } from "@microsoft/teams-js";
 import { inTeams } from "../utils";
 import styles from "../styles/Stage.module.scss";
-// import { LiveShareContextProvider, StageWrapper } from "../components";
+import { LiveShareContextProvider, StageWrapper } from "../components";
 
 const IN_TEAMS = inTeams();
 
@@ -15,9 +15,9 @@ export const Stage = () => {
 	return (
 		<div className={styles.stageCanvas}>
 			<LiveShareProvider joinOnLoad host={host}>
-				{/* <LiveShareContextProvider>
+				<LiveShareContextProvider>
 					<StageWrapper />
-				</LiveShareContextProvider> */}
+				</LiveShareContextProvider>
 			</LiveShareProvider>
 		</div>
 	);
