@@ -1,0 +1,658 @@
+[
+	{
+		"pageid": 59545,
+		"title": "Sagrada Família",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia",
+		"coordinates": {
+			"lat": 41.40369,
+			"lon": 2.17433,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/5/57/Sagrada_Familia_8-12-21_%281%29.jpg"
+	},
+	{
+		"pageid": 88384,
+		"title": "Cologne Cathedral",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Cologne_Cathedral",
+		"coordinates": {
+			"lat": 50.94129,
+			"lon": 6.95817,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/a/af/K%C3%B6lner_Dom_-_Westfassade_2022_ohne_Ger%C3%BCst-0968.jpg"
+	},
+	{
+		"pageid": 156604,
+		"title": "Brandenburg Gate",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
+		"coordinates": {
+			"lat": 52.5163,
+			"lon": 13.3777,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Brandenburger_Tor_abends.jpg"
+	},
+	{
+		"pageid": 858427,
+		"title": "Berlin Victory Column",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Berlin_Victory_Column",
+		"coordinates": {
+			"lat": 52.51444444,
+			"lon": 13.35,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Berlin_Siegess%C3%A4ule_8245.jpg"
+	},
+	{
+		"pageid": 21967307,
+		"title": "Elbphilharmonie",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Elbphilharmonie",
+		"coordinates": {
+			"lat": 53.54138889,
+			"lon": 9.98416667,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Elbphilharmonie%2C_Hamburg.jpg"
+	},
+	{
+		"pageid": 9232,
+		"title": "Eiffel Tower",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+		"coordinates": {
+			"lat": 48.85822222,
+			"lon": 2.2945,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg"
+	},
+	{
+		"pageid": 49603,
+		"title": "Colosseum",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Colosseum",
+		"coordinates": {
+			"lat": 41.89027778,
+			"lon": 12.49222222,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/d/de/Colosseo_2020.jpg"
+	},
+	{
+		"pageid": 340002,
+		"title": "Pantheon, Rome",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+		"coordinates": {
+			"lat": 41.8986,
+			"lon": 12.4768,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Pantheon_Rom_1_cropped.jpg"
+	},
+	{
+		"pageid": 77698,
+		"title": "Sistine Chapel",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Sistine_Chapel",
+		"coordinates": {
+			"lat": 41.9031,
+			"lon": 12.4544
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/8/82/Sistina-interno.jpg"
+	},
+	{
+		"pageid": 73188,
+		"title": "St. Peter's Basilica",
+		"canonicalurl": "https://en.wikipedia.org/wiki/St._Peter%27s_Basilica",
+		"coordinates": {
+			"lat": 41.90222222,
+			"lon": 12.45333333,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg"
+	},
+	{
+		"pageid": 46889,
+		"title": "Leaning Tower of Pisa",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa",
+		"coordinates": {
+			"lat": 43.72305556,
+			"lon": 10.39638889,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Italy_-_Pisa_-_Leaning_Tower.jpg"
+	},
+	{
+		"pageid": 78186,
+		"title": "Atomium",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Atomium",
+		"coordinates": {
+			"lat": 50.89472222,
+			"lon": 4.34111111,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Brussels_-_Atomium_2022.jpg"
+	},
+	{
+		"pageid": 214438,
+		"title": "Aachen Cathedral",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Aachen_Cathedral",
+		"coordinates": {
+			"lat": 50.77475,
+			"lon": 6.08392222,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/b/be/Aachen_Germany_Imperial-Cathedral-01.jpg"
+	},
+	{
+		"pageid": 3259661,
+		"title": "Bourges Cathedral",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Bourges_Cathedral",
+		"coordinates": {
+			"lat": 47.08194444,
+			"lon": 2.39944444,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cath%C3%A9drale_Saint-%C3%89tienne_7SC2336CFP.jpg"
+	},
+	{
+		"pageid": 86947,
+		"title": "Grand-Place",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Grand-Place",
+		"coordinates": {
+			"lat": 50.84666667,
+			"lon": 4.3525,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg"
+	},
+	{
+		"pageid": 72987,
+		"title": "Canterbury Cathedral",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Canterbury_Cathedral",
+		"coordinates": {
+			"lat": 51.279722,
+			"lon": 1.083056,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Canterbury-cathedral-wyrdlight.jpg"
+	},
+	{
+		"pageid": 31673601,
+		"title": "Cité de Carcassonne",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Cit%C3%A9_de_Carcassonne",
+		"coordinates": {
+			"lat": 43.21055556,
+			"lon": 2.35888889,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/File_by_Alexander_Baranov_-_%D0%A1%D1%82%D0%B5%D0%BD%D0%B0_%289872878066%29.jpg"
+	},
+	{
+		"pageid": 584220,
+		"title": "Ironbridge Gorge",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Ironbridge_Gorge",
+		"coordinates": {
+			"lat": 52.6264,
+			"lon": -2.4728
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Iron_Bridge_east_side_in_February_2019.jpg"
+	},
+	{
+		"pageid": 568042,
+		"title": "Porta Nigra",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Porta_Nigra",
+		"coordinates": {
+			"lat": 49.75972222,
+			"lon": 6.64388889,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Porta_Nigra_morgens_%28100MP%29.jpg"
+	},
+	{
+		"pageid": 6809871,
+		"title": "Völklingen Ironworks",
+		"canonicalurl": "https://en.wikipedia.org/wiki/V%C3%B6lklingen_Ironworks",
+		"coordinates": {
+			"lat": 49.24444444,
+			"lon": 6.85,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/d/d0/VH_pano5_1.jpg"
+	},
+	{
+		"pageid": 5959512,
+		"title": "Megalithic Temples of Malta",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Megalithic_Temples_of_Malta",
+		"coordinates": {
+			"lat": 36.04722222,
+			"lon": 14.26916667,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Ggantija_Temples%2C_Xaghra%2C_Gozo.jpg"
+	},
+	{
+		"pageid": 308634,
+		"title": "Olympia, Greece",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Olympia,_Greece",
+		"coordinates": {
+			"lat": 37.638,
+			"lon": 21.63,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Ancient_Olympia%2C_Greece2.jpg"
+	},
+	{
+		"pageid": 7951,
+		"title": "Delphi",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Delphi",
+		"coordinates": {
+			"lat": 38.4823,
+			"lon": 22.5013,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Delphi%2C_Greece_-_panoramio.jpg"
+	},
+	{
+		"pageid": 30543,
+		"title": "Alhambra",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Alhambra",
+		"coordinates": {
+			"lat": 37.1775,
+			"lon": -3.59,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg"
+	},
+	{
+		"pageid": 31165,
+		"title": "Tower of London",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Tower_of_London",
+		"coordinates": {
+			"lat": 51.50805556,
+			"lon": -0.07611111,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Tower_of_London_from_the_Shard_%288515883950%29.jpg"
+	},
+	{
+		"pageid": 240912,
+		"title": "Neuschwanstein Castle",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Neuschwanstein_Castle",
+		"coordinates": {
+			"lat": 47.5575,
+			"lon": 10.74944444,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Schloss_Neuschwanstein_2013.jpg"
+	},
+	{
+		"pageid": 3969,
+		"title": "Buckingham Palace",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Buckingham_Palace",
+		"coordinates": {
+			"lat": 51.50083333,
+			"lon": -0.14194444,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Buckingham_Palace_aerial_view_2016_%28cropped%29.jpg"
+	},
+	{
+		"pageid": 275515,
+		"title": "Mont-Saint-Michel",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
+		"coordinates": {
+			"lat": 48.636,
+			"lon": -1.511,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/7/78/Mont-Saint-Michel_vu_du_ciel.jpg"
+	},
+	{
+		"pageid": 73309,
+		"title": "Edinburgh Castle",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Edinburgh_Castle",
+		"coordinates": {
+			"lat": 55.94861111,
+			"lon": -3.20083333,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Edinburgh_Castle_from_the_south_east.JPG"
+	},
+	{
+		"pageid": 17546,
+		"title": "Louvre",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Louvre",
+		"coordinates": {
+			"lat": 48.86111111,
+			"lon": 2.33583333,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/6/66/Louvre_Museum_Wikimedia_Commons.jpg"
+	},
+	{
+		"pageid": 27633,
+		"title": "Stonehenge",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Stonehenge",
+		"coordinates": {
+			"lat": 51.17888889,
+			"lon": -1.82611111,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Stonehenge2007_07_30.jpg"
+	},
+	{
+		"pageid": 672020,
+		"title": "Prague Castle",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Prague_Castle",
+		"coordinates": {
+			"lat": 50.08975,
+			"lon": 14.3984,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Czech-2013-Prague-View_from_Charles_Bridge_of_Prague_Castle.jpg"
+	},
+	{
+		"pageid": 8952776,
+		"title": "Anne Frank House",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Anne_Frank_House",
+		"coordinates": {
+			"lat": 52.3753,
+			"lon": 4.884,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Amsterdam_%28NL%29%2C_Anne-Frank-Huis_--_2015_--_7185.jpg"
+	},
+	{
+		"pageid": 1608923,
+		"title": "Belém Tower",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
+		"coordinates": {
+			"lat": 38.69166667,
+			"lon": -9.21611111,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/6/65/Torre_Bel%C3%A9m_April_2009-4a.jpg"
+	},
+	{
+		"pageid": 53316,
+		"title": "Palace of Versailles",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Palace_of_Versailles",
+		"coordinates": {
+			"lat": 48.80480556,
+			"lon": 2.12033333,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Versailles-Chateau-Jardins02.jpg"
+	},
+	{
+		"pageid": 515933,
+		"title": "Charles Bridge",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Charles_Bridge",
+		"coordinates": {
+			"lat": 50.08638889,
+			"lon": 14.41194444,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/8/80/Charles_Bridge_-_Prague%2C_Czech_Republic_-_panoramio.jpg"
+	},
+	{
+		"pageid": 13267108,
+		"title": "The Little Mermaid (statue)",
+		"canonicalurl": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(statue)",
+		"coordinates": {
+			"lat": 55.69286111,
+			"lon": 12.59927778,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/en/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg"
+	},
+	{
+		"pageid": 89107,
+		"title": "Guggenheim Museum Bilbao",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Guggenheim_Museum_Bilbao",
+		"coordinates": {
+			"lat": 43.26861111,
+			"lon": -2.93388889,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Museo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg"
+	},
+	{
+		"pageid": 195780,
+		"title": "St Patrick's Cathedral, Dublin",
+		"canonicalurl": "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Dublin",
+		"coordinates": {
+			"lat": 53.33944444,
+			"lon": -6.27138889,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/2/20/St_Patrick%27s_Cathedral_Exterior%2C_Dublin%2C_Ireland_-_Diliff.jpg"
+	},
+	{
+		"pageid": 335740,
+		"title": "Trevi Fountain",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+		"coordinates": {
+			"lat": 41.90083333,
+			"lon": 12.48305556,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg"
+	},
+	{
+		"pageid": 1324,
+		"title": "Park Güell",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Park_G%C3%BCell",
+		"coordinates": {
+			"lat": 41.41361111,
+			"lon": 2.15277778,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/3/33/Parc_guell_-_panoramio.jpg"
+	},
+	{
+		"pageid": 2482,
+		"title": "Arc de Triomphe",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
+		"coordinates": {
+			"lat": 48.87377778,
+			"lon": 2.29502778,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg"
+	},
+	{
+		"pageid": 1250256,
+		"title": "Royal Palace of Madrid",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Royal_Palace_of_Madrid",
+		"coordinates": {
+			"lat": 40.41805556,
+			"lon": -3.71416667,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/7/74/Madrid_Palacio_Real_De_Madrid_Entree_Sud_-_panoramio.jpg"
+	},
+	{
+		"pageid": 42764,
+		"title": "Hagia Sophia",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+		"coordinates": {
+			"lat": 41.00833333,
+			"lon": 28.98,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg"
+	},
+	{
+		"pageid": 62233,
+		"title": "Notre-Dame de Paris",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
+		"coordinates": {
+			"lat": 48.853,
+			"lon": 2.3498,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Notre-Dame_de_Paris%2C_4_October_2017.jpg"
+	},
+	{
+		"pageid": 672020,
+		"title": "Prague Castle",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Prague_Castle",
+		"coordinates": {
+			"lat": 50.08975,
+			"lon": 14.3984,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Czech-2013-Prague-View_from_Charles_Bridge_of_Prague_Castle.jpg"
+	},
+	{
+		"pageid": 4689517,
+		"title": "Windsor Castle",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Windsor_Castle",
+		"coordinates": {
+			"lat": 51.48333333,
+			"lon": -0.60416667,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Windsor_Castle_at_Sunset_-_Nov_2006.jpg"
+	},
+	{
+		"pageid": 103553,
+		"title": "Doge's Palace",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Doge%27s_Palace",
+		"coordinates": {
+			"lat": 45.4339,
+			"lon": 12.34,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/0/00/%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg"
+	},
+	{
+		"pageid": 974321,
+		"title": "Rialto Bridge",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Rialto_Bridge",
+		"coordinates": {
+			"lat": 45.438,
+			"lon": 12.336,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/1/18/Ponte_di_Rialto%2C_Canal_Grande.jpg"
+	},
+	{
+		"pageid": 165202,
+		"title": "Schönbrunn Palace",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace",
+		"coordinates": {
+			"lat": 48.184516,
+			"lon": 16.311865,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Wien_-_Schloss_Sch%C3%B6nbrunn.JPG"
+	},
+	{
+		"pageid": 1868002,
+		"title": "Monument to the Battle of the Nations",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Monument_to_the_Battle_of_the_Nations",
+		"coordinates": {
+			"lat": 51.31222222,
+			"lon": 12.41305556,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/V%C3%B6lkerschlachtdenkmal_Leipzig_beim_Nacht.jpg"
+	},
+	{
+		"pageid": 587238,
+		"title": "Eltz Castle",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Eltz_Castle",
+		"coordinates": {
+			"lat": 50.2050554,
+			"lon": 7.3365971,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/1/13/Le_ch%C3%A2teau_d%27Eltz_%28Burg_Eltz%29_en_allemagne.jpg"
+	},
+	{
+		"pageid": 188921,
+		"title": "Frauenkirche, Dresden",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Frauenkirche,_Dresden",
+		"coordinates": {
+			"lat": 51.05194444,
+			"lon": 13.74166667,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/9/93/100130_150006_Dresden_Frauenkirche_winter_blue_sky-2.jpg"
+	},
+	{
+		"pageid": 38860,
+		"title": "Zwinger (Dresden)",
+		"canonicalurl": "https://en.wikipedia.org/wiki/Zwinger_(Dresden)",
+		"coordinates": {
+			"lat": 51.05305556,
+			"lon": 13.73388889,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/2/29/2006-07-30_Zwinger_dresden2.jpg"
+	},
+	{
+		"pageid": 2280057,
+		"title": "Römer",
+		"canonicalurl": "https://en.wikipedia.org/wiki/R%C3%B6mer",
+		"coordinates": {
+			"lat": 50.11027778,
+			"lon": 8.68166667,
+			"primary": "",
+			"globe": "earth"
+		},
+		"pageImage": "https://upload.wikimedia.org/wikipedia/commons/4/48/Frankfurter_R%C3%B6mer_2019.jpg"
+	}
+]
