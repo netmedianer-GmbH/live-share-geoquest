@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { LiveShareProvider } from "@microsoft/live-share-react";
 import { TestLiveShareHost } from "@microsoft/live-share";
+import { LiveShareProvider } from "@microsoft/live-share-react";
 import { LiveShareHost } from "@microsoft/teams-js";
-import { inTeams } from "../utils";
 import styles from "../styles/Stage.module.scss";
 import { LiveShareContextProvider, StageWrapper } from "../components";
+import { inTeams } from "../utils";
 
 const IN_TEAMS = inTeams();
 

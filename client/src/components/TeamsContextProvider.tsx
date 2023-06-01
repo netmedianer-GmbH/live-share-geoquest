@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode, createContext, useEffect, useRef, useState } from "react";
-import { app } from "@microsoft/teams-js";
 import { Spinner } from "@fluentui/react-components";
+import { app } from "@microsoft/teams-js";
 import { inTeams } from "../utils";
 
 // Create LiveGame context

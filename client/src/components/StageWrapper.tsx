@@ -1,7 +1,6 @@
 import { FunctionComponent, useContext } from "react"
-import { AppGameState } from "../utils/constants";
-import { Onboarding } from ".";
-import { ILiveGameContext, LiveGameContext } from "./LiveShareContextProvider";
+import { AppGameState } from "../utils";
+import { ILiveGameContext, LiveGameContext, Onboarding } from ".";
 // import { Gaming } from "./Gaming";
 // import { Preparation } from "./Preparation";
 // import { Countdown } from "./Countdown";

@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactNode, useContext } from "react";
-import { DistanceHelper } from "../utils/DistanceHelper";
-import { LiveGameContext, ILiveGameContext, ILiveGameUser } from "./LiveShareContextProvider";
 import { Table, TableBody, TableCell, TableContextValue, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
+import { LiveGameContext, ILiveGameContext, ILiveGameUser } from ".";
+import { DistanceHelper } from "../utils";
 import styles from "../styles/UserList.module.scss";
 
 type UserListProps = {

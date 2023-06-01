@@ -1,15 +1,12 @@
 import { FunctionComponent, ReactNode, useContext, useEffect } from "react"
 import { Button, Divider, Select } from "@fluentui/react-components";
-import { AppGameState, defaultPosition } from "../utils/constants";
-import { LiveGameContext, ILiveGameContext, IPosition, ILiveGameUser } from "./LiveShareContextProvider";
-import { QuestionType as QUESTION_TYPE, QuestionsHelper } from "../utils/QuestionsHelper";
-import { DistanceHelper } from "../utils";
-import { UserList } from "./UserList";
-import styles from "../styles/GameSettings.module.scss";
-import { TILE_PROVIDER } from "../utils/MapProvider";
-import { useLocalStorage } from "usehooks-ts";
 import { ShareScreenStartRegular } from "@fluentui/react-icons";
 import { meeting, SdkError } from "@microsoft/teams-js";
+import { useLocalStorage } from "usehooks-ts";
+import { LiveGameContext, ILiveGameContext, IPosition, ILiveGameUser } from "./LiveShareContextProvider";
+import { DistanceHelper, TILE_PROVIDER, AppGameState, defaultPosition, QuestionType as QUESTION_TYPE, QuestionsHelper } from "../utils";
+import { UserList } from ".";
+import styles from "../styles/GameSettings.module.scss";
 
 type GameSettingsProps = {
 	// children: ReactNode,
@@ -145,8 +142,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 			<div className={styles.spacer}></div>
 			<Button onClick={() => onScoreResetBtn()} appearance={"secondary"}>Reset scores</Button>
 		</div>
-
-
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game settings</Divider>
 		<Select value={tileProvider} onChange={(_e, data) => onTileProviderChanged(data)}>

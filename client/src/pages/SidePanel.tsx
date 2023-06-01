@@ -1,11 +1,10 @@
-
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LiveShareProvider } from "@microsoft/live-share-react";
 import { TestLiveShareHost } from "@microsoft/live-share";
+import { LiveShareProvider } from "@microsoft/live-share-react";
 import { LiveShareHost } from "@microsoft/teams-js";
-import { inTeams } from "../utils";
 import styles from "../styles/SidePanel.module.scss";
+import { inTeams } from "../utils";
 import { TeamsContext, GameSettings, LiveShareContextProvider } from "../components";
 
 const IN_TEAMS = inTeams();
