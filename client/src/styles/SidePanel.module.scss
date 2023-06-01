@@ -1,15 +1,3 @@
 .sidePanelWrapper {
 	width: 100%;
 }
-
-.sidePanelControls {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-
-	Button {
-		display: flex;
-		margin: 0 auto 0.25rem auto;
-		width: 90%;
-	}
-}

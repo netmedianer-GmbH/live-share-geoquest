@@ -121,28 +121,31 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 	const questionTypes = Object.entries(QUESTION_TYPE).map(([key, value]) => ({ key, value }));
 
 	return <>
-		<Button
-			className={styles.shareButton}
-			size="large"
-			icon={<ShareScreenStartRegular />}
-			appearance="primary"
-			onClick={onShareButtonClick}
-		>Share app to stage</Button>
+		<div className={styles.buttonGroup}>
+			<Button
+				className={styles.shareButton}
+				size="large"
+				icon={<ShareScreenStartRegular />}
+				appearance="primary"
+				onClick={onShareButtonClick}
+			>Share app to stage</Button>
+		</div>
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game control</Divider>
-		<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={(gameState.status === AppGameState.ONBOARDING) ? "primary" : "outline"}>Onboarding</Button>
-		<Button onClick={() => onGameControlBtn(AppGameState.PREPARING)} appearance={(gameState.status === AppGameState.PREPARING) ? "primary" : "outline"}>Pre-round</Button>
+		<div className={styles.buttonGroup}>
+			<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={(gameState.status === AppGameState.ONBOARDING) ? "primary" : "outline"}>Onboarding</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.PREPARING)} appearance={(gameState.status === AppGameState.PREPARING) ? "primary" : "outline"}>Pre-round</Button>
+			<Button
+				onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)}
+				appearance={(gameState.status === AppGameState.COUNTDOWN || gameState.status === AppGameState.GAMING) ? "primary" : "outline"}
+				disabled={!(gameState.status === AppGameState.PREPARING || gameState.status === AppGameState.SCORING)}
+			>Start next round</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.SCORING)} appearance={(gameState.status === AppGameState.SCORING) ? "primary" : "outline"}>Scoring</Button>
 
-		<Button
-			onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)}
-			appearance={(gameState.status === AppGameState.COUNTDOWN || gameState.status === AppGameState.GAMING) ? "primary" : "outline"}
-			disabled={!(gameState.status === AppGameState.PREPARING || gameState.status === AppGameState.SCORING)}
-		>Start next round</Button>
+			<div className={styles.spacer}></div>
+			<Button onClick={() => onScoreResetBtn()} appearance={"secondary"}>Reset scores</Button>
+		</div>
 
-		<Button onClick={() => onGameControlBtn(AppGameState.SCORING)} appearance={(gameState.status === AppGameState.SCORING) ? "primary" : "outline"}>Scoring</Button>
-
-		<div className={styles.spacer}></div>
-		<Button onClick={() => onScoreResetBtn()} appearance={"secondary"}>Reset scores</Button>
 
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game settings</Divider>
