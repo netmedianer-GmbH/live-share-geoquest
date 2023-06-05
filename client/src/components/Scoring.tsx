@@ -1,9 +1,11 @@
 import { FunctionComponent, ReactNode, useContext } from "react";
+import { Flag32Filled } from "@fluentui/react-icons";
 import { Map, Marker } from "pigeon-maps";
 import styles from "../styles/Scoring.module.scss";
 import { LiveGameContext, ILiveGameContext } from "./LiveShareContextProvider";
 import { UserList } from "./UserList";
 import { MapProvider } from "../utils/MapProvider";
+import { TeamsContext } from "../components";
 
 type ScoringProps = {
 	// children: ReactNode,
@@ -11,18 +13,22 @@ type ScoringProps = {
 
 export const Scoring: FunctionComponent<ScoringProps> = () => {
 	const { question, userMap, tileProvider } = useContext(LiveGameContext) as ILiveGameContext;
+	const { teamsContext } = useContext(TeamsContext);
 
 	const markers: ReactNode[] = [];
 	userMap.forEach((user, key) => {
 		if (user.position) {
+			const colorMarker = (key === teamsContext?.user?.id) ? "var(--colorPaletteRedBackground3)" : "red";
 			const markerPosition: [number, number] = [user.position?.lat, user.position?.lng];
-			markers.push(<Marker key={key} anchor={markerPosition} />);
+			markers.push(<Marker key={key} anchor={markerPosition} color={colorMarker} />);
 		}
 	});
 
 	if (question) {
 		const targetPosition: [number, number] = [question.location.lat, question.location.lng];
-		markers.push(<Marker key={"target"} anchor={targetPosition} color="red" />);
+		markers.push(<Marker key={"target"} anchor={targetPosition} color="red">
+			<Flag32Filled primaryFill="#ff0000" />
+		</Marker>);
 	}
 
 	return <div className={styles.scoringWrapper}>
