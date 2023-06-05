@@ -45,11 +45,11 @@ export interface ILiveGameUser {
 export const LiveGameContext = createContext<ILiveGameContext | undefined>(undefined);
 
 
-type LiveGameContextProviderProps = {
+type LiveShareContextProviderProps = {
 	children: ReactNode,
 };
 
-export const LiveShareContextProvider: FunctionComponent<LiveGameContextProviderProps> = ({ children }) => {
+export const LiveShareContextProvider: FunctionComponent<LiveShareContextProviderProps> = ({ children }) => {
 	const { teamsContext } = useContext(TeamsContext);
 
 

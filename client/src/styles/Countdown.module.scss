@@ -1,0 +1,17 @@
+.centerOnPage {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.question {
+	text-align: center !important;
+	color: var(--colorBrandForeground1);
+}
+
+.questionImage {
+	width: 50%;
+}

@@ -131,13 +131,17 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game control</Divider>
 		<div className={styles.buttonGroup}>
 			<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={(gameState.status === AppGameState.ONBOARDING) ? "primary" : "outline"}>Onboarding</Button>
-			<Button onClick={() => onGameControlBtn(AppGameState.PREPARING)} appearance={(gameState.status === AppGameState.PREPARING) ? "primary" : "outline"}>Pre-round</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)} appearance={(gameState.status === AppGameState.COUNTDOWN) ? "primary" : "outline"}>Start game</Button>
+
+
+
+			{/* <Button onClick={() => onGameControlBtn(AppGameState.PREPARING)} appearance={(gameState.status === AppGameState.PREPARING) ? "primary" : "outline"}>Pre-round</Button>
 			<Button
 				onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)}
 				appearance={(gameState.status === AppGameState.COUNTDOWN || gameState.status === AppGameState.GAMING) ? "primary" : "outline"}
 				disabled={!(gameState.status === AppGameState.PREPARING || gameState.status === AppGameState.SCORING)}
 			>Start next round</Button>
-			<Button onClick={() => onGameControlBtn(AppGameState.SCORING)} appearance={(gameState.status === AppGameState.SCORING) ? "primary" : "outline"}>Scoring</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.SCORING)} appearance={(gameState.status === AppGameState.SCORING) ? "primary" : "outline"}>Scoring</Button> */}
 
 			<div className={styles.spacer}></div>
 			<Button onClick={() => onScoreResetBtn()} appearance={"secondary"}>Reset scores</Button>

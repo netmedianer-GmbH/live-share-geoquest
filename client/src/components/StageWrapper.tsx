@@ -1,6 +1,6 @@
 import { FunctionComponent, useContext } from "react"
 import { AppGameState } from "../utils";
-import { ILiveGameContext, LiveGameContext, Onboarding } from ".";
+import { Countdown, ILiveGameContext, LiveGameContext, Onboarding } from ".";
 // import { Gaming } from "./Gaming";
 // import { Preparation } from "./Preparation";
 // import { Countdown } from "./Countdown";
@@ -22,13 +22,11 @@ export const StageWrapper: FunctionComponent<StageWrapperProps> = () => {
 			<>
 				<Preparation />
 			</>
-		}
+		} */}
 		{(gameState.status === AppGameState.COUNTDOWN) &&
-			<>
-				<Countdown />
-			</>
+			<Countdown />
 		}
-		{(gameState.status === AppGameState.GAMING) &&
+		{/* {(gameState.status === AppGameState.GAMING) &&
 			<>
 				<Gaming />
 			</>

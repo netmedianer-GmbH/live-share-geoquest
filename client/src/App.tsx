@@ -35,7 +35,7 @@ function App() {
 		console.log("App.js: initializing client SDK");
 		initialize();
 
-		localStorage.debug = 'fluid:*'
+		localStorage.debug = 'fluid:*';
 	}, []);
 
 	const appReady = (IN_TEAMS && initialized) || !IN_TEAMS;
