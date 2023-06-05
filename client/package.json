@@ -9,7 +9,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
 	"start:server": "npx tinylicious@latest",
-	"manifest": "zip -j ../manifest/dev.zip ../manifest/DEV/*"
+	"manifest": "zip -j ../manifest/dev.zip ../manifest/DEV/* && zip -j ../manifest/staging.zip ../manifest/STAGING/*"
   },
   "dependencies": {
     "@fluentui/react-components": "^9.21.0",
