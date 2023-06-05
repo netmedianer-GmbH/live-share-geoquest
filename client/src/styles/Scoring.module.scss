@@ -1,0 +1,14 @@
+.scoringWrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.scoringLeft {
+	width: 400px;
+}
+
+.scoringRight {
+	width: 100%;
+	overflow: hidden;
+}

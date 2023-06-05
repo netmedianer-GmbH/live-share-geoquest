@@ -5,6 +5,6 @@ export * from "./StageWrapper";
 export * from "./Onboarding";
 export * from "./UserList";
 export * from "./Countdown";
-// export * from "./Gaming";
+export * from "./Gaming";
 export * from "./GameTimer";
-// export * from "./Scoring";
+export * from "./Scoring";
