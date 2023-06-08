@@ -81,7 +81,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		if (gameState.status === AppGameState.COUNTDOWN) {
 			setCurrentRound(currentRound + 1);
 
-			const nextQuestion = QuestionsHelper.getMonumentQuestion();
+			const nextQuestion = QuestionsHelper.getQuestion(persistedQuestionType);
 			setQuestion(nextQuestion);
 			timerStart1(countdownMillis);
 
