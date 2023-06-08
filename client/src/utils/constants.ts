@@ -1,6 +1,5 @@
 export enum AppGameState {
 	"ONBOARDING",
-	"PREPARING",
 	"COUNTDOWN",
 	"GAMING",
 	"SCORING",
