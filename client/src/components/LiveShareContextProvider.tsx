@@ -28,6 +28,10 @@ export interface ILiveGameContext {
 	setQuestion: (question?: IQuestion) => void;
 	tileProvider: TILE_PROVIDER;
 	setTileProvider: (tileProvider: TILE_PROVIDER) => void;
+	currentRound: number;
+	setCurrentRound: (round: number) => void;
+	numberOfRounds: number;
+	setNumberOfRounds: (rounds: number) => void;
 }
 
 // Define LiveGame user
@@ -79,8 +83,15 @@ export const LiveShareContextProvider: FunctionComponent<LiveShareContextProvide
 	const [question, setQuestion] = useSharedState<IQuestion | undefined>("liveShareGeoQuestGameQuestion", undefined);
 
 	// Init LiveGame GAME_MAPPROVIDER, read from local storage for inital value
-	const [persistedTileProvider] = useLocalStorage<string>("liveShareGeoQuestGameTileProvider", "WATERCOLOR_BACKGROUND");
-	const [tileProvider, setTileProvider] = useLiveState<TILE_PROVIDER>("liveShareGeoQuestGameTileProvider", persistedTileProvider as TILE_PROVIDER);
+	const [persistedTileProvider] = useLocalStorage<string>("liveShareGeoQuestTileProvider", "WATERCOLOR_BACKGROUND");
+	const [tileProvider, setTileProvider] = useSharedState<TILE_PROVIDER>("liveShareGeoQuestTileProvider", persistedTileProvider as TILE_PROVIDER);
+
+	// Init LiveGame GAME_ROUND
+	const [currentRound, setCurrentRound] = useSharedState<number>("liveShareGeoQuestCurrentRound", 0);
+
+	// Init LiveGame GAME_NUMBERROUNDS, read from local storage for inital value
+	const [persistedNumberOfRounds] = useLocalStorage<number>("liveShareGeoQuestNumberOfRounds", 5);
+	const [numberOfRounds, setNumberOfRounds] = useSharedState<number>("liveShareGeoQuestNumberOfRounds", persistedNumberOfRounds);
 
 
 	return <LiveGameContext.Provider value={{
@@ -103,7 +114,11 @@ export const LiveShareContextProvider: FunctionComponent<LiveShareContextProvide
 		question,
 		setQuestion,
 		tileProvider,
-		setTileProvider
+		setTileProvider,
+		currentRound,
+		setCurrentRound,
+		numberOfRounds,
+		setNumberOfRounds,
 	}}>
 		{children}
 	</LiveGameContext.Provider>

@@ -5,9 +5,11 @@ import styles from "../styles/GameTimer.module.scss";
 
 type GameTimerProps = {
 	timerMilliRemaining: number,
+	prefix?: string,
+	suffix?: string,
 }
 
-export const GameTimer: FunctionComponent<GameTimerProps> = ({ timerMilliRemaining }) => {
+export const GameTimer: FunctionComponent<GameTimerProps> = ({ timerMilliRemaining, prefix, suffix }) => {
 	const formattedTimestamp = useMemo((): string => {
 		if (!timerMilliRemaining) {
 			return "0:00";
@@ -18,12 +20,14 @@ export const GameTimer: FunctionComponent<GameTimerProps> = ({ timerMilliRemaini
 	return (
 		<div className={styles.gameTimerWrapper}>
 			<div className={styles.gameTimerTextWrapper}>
+				{(prefix && prefix.length) && <Text size={800}>{prefix}</Text>}
 				<Text size={800}>
 					Timer:&nbsp;
 				</Text>
 				<Text size={800} weight="bold">
 					{formattedTimestamp}
 				</Text>
+				{(suffix && suffix.length) && <Text size={800}>{suffix}</Text>}
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@ import { GameTimer } from "./GameTimer";
 import { LiveGameContext, ILiveGameContext, IPosition } from "./LiveShareContextProvider";
 import { TeamsContext, ITeamsContext } from "./TeamsContextProvider";
 import { defaultPosition } from "../utils/constants";
-import { Subtitle2 } from "@fluentui/react-components";
+import { Text, Subtitle2 } from "@fluentui/react-components";
 import { MapProvider } from "../utils/MapProvider";
 
 type GamingProps = {
@@ -14,7 +14,7 @@ type GamingProps = {
 
 export const Gaming: FunctionComponent<GamingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
-	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider } = useContext(LiveGameContext) as ILiveGameContext;
+	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider, currentRound, numberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
 	const [markerPosition, setMarkerPosition] = useState<[number, number]>(defaultPosition);
 
 	useEffect(() => {
@@ -42,7 +42,8 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 
 	return <div className={styles.gamingCanvas}>
 		<div className={styles.gamingHeader}>
-			<GameTimer timerMilliRemaining={timerMilliRemaining2} />
+			<Text size={800}></Text>
+			<GameTimer prefix={`Round: ${currentRound} / ${numberOfRounds} - `} timerMilliRemaining={timerMilliRemaining2} />
 			{question && <Subtitle2>Your task: {question.question}</Subtitle2>}
 		</div>
 		<div className={styles.mapCanvas}>

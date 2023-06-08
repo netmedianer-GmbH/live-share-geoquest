@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode, useContext, useEffect } from "react"
-import { Button, Divider, Select } from "@fluentui/react-components";
+import { Button, Divider, Label, Select, Slider, useId } from "@fluentui/react-components";
 import { ShareScreenStartRegular } from "@fluentui/react-icons";
 import { meeting, SdkError } from "@microsoft/teams-js";
 import { useLocalStorage } from "usehooks-ts";
@@ -13,9 +13,19 @@ type GameSettingsProps = {
 };
 
 export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
-	const { gameState, setGameState, userMap, setQuestion, timerStart1, timerStart2, question, setUser, tileProvider, setTileProvider } = useContext(LiveGameContext) as ILiveGameContext;
-	const [, setPersistedTileProvider] = useLocalStorage<TILE_PROVIDER>("spotalotTileProvider", TILE_PROVIDER.WATERCOLOR_BACKGROUND);
-	const [persistedQuestionType, setPersistedQuestionType] = useLocalStorage<QUESTION_TYPE>("spotalotQuestionType", QUESTION_TYPE.CAPITALS);
+	const id = useId();
+	const {
+		gameState, setGameState,
+		userMap, setUser,
+		timerStart1,
+		timerStart2,
+		question, setQuestion,
+		tileProvider, setTileProvider,
+		currentRound, setCurrentRound,
+		setNumberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
+	const [, setPersistedTileProvider] = useLocalStorage<TILE_PROVIDER>("liveShareGeoQuestTileProvider", TILE_PROVIDER.WATERCOLOR_BACKGROUND);
+	const [persistedQuestionType, setPersistedQuestionType] = useLocalStorage<QUESTION_TYPE>("liveShareGeoQuestQuestionType", QUESTION_TYPE.CAPITALS);
+	const [persistedNumberOfRounds, setPersistedNumberOfRounds] = useLocalStorage<number>("liveShareGeoQuestNumberOfRounds", 5);
 
 
 	// Share Button
@@ -37,11 +47,13 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		});
 	};
 
-	const onScoreResetBtn = () => {
+	const onGameResetBtn = () => {
 		userMap.forEach((user, key) => {
 			const updatedUser = { ...user, score: 0 } as ILiveGameUser;
 			setUser(key, updatedUser);
 		});
+		setCurrentRound(0);
+		setGameState({ status: AppGameState.ONBOARDING });
 	};
 
 
@@ -54,6 +66,11 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		setPersistedQuestionType(data.value as unknown as QUESTION_TYPE);
 	}
 
+	const onNumberOfRoundsChanged = (data: { value: number }) => {
+		setPersistedNumberOfRounds(data.value);
+		setNumberOfRounds(data.value);
+	}
+
 
 	const countdownMillis = 10000;
 	const countdownGame = 30000;
@@ -62,6 +79,8 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		let timer: number | undefined;
 
 		if (gameState.status === AppGameState.COUNTDOWN) {
+			setCurrentRound(currentRound + 1);
+
 			const nextQuestion = QuestionsHelper.getMonumentQuestion();
 			setQuestion(nextQuestion);
 			timerStart1(countdownMillis);
@@ -124,27 +143,36 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 			>Share app to stage</Button>
 		</div>
 
-		<Divider className={styles.gameSettingsDivider} appearance="brand">Game control</Divider>
+
+		<Divider className={styles.gameSettingsDivider} appearance="brand">Game control - Round: {currentRound}</Divider>
 		<div className={styles.buttonGroup}>
 			<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={(gameState.status === AppGameState.ONBOARDING) ? "primary" : "outline"}>Onboarding</Button>
-			<Button onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)} appearance={(gameState.status === AppGameState.COUNTDOWN) ? "primary" : "outline"}>Start game</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)} appearance={(gameState.status === AppGameState.COUNTDOWN) ? "primary" : "outline"}>Start next round</Button>
 
 			<div className={styles.spacer}></div>
-			<Button onClick={() => onScoreResetBtn()} appearance={"secondary"}>Reset scores</Button>
+			<Button onClick={() => onGameResetBtn()} appearance={"secondary"}>Reset game</Button>
 		</div>
 
+
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game settings</Divider>
+		<div className={styles.gameSettingsSlider}>
+			<Label htmlFor={id}>Number of rounds: {persistedNumberOfRounds}</Label>
+			<Slider min={1} max={20} id={id} value={persistedNumberOfRounds} onChange={(_e, data) => onNumberOfRoundsChanged(data)} />
+		</div>
+
 		<Select value={tileProvider} onChange={(_e, data) => onTileProviderChanged(data)}>
 			{tileProviders.map(p => {
 				return <option key={p.key} value={p.key}>{p.value}</option>;
 			})}
 		</Select>
+
 		<div className={styles.spacer}></div>
 		<Select value={persistedQuestionType} onChange={(_e, data) => onQuestionTypeChanged(data)}>
 			{questionTypes.map(p => {
 				return <option key={p.key} value={p.key}>{p.value}</option>;
 			})}
 		</Select>
+
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Users</Divider>
 		<UserList showScore={true} showDistance={true} size="extra-small" />
