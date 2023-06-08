@@ -10,19 +10,23 @@ type OnboardingProps = {
 
 export const Onboarding: FunctionComponent<OnboardingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
-	const { setUser } = useContext(LiveGameContext) as ILiveGameContext;
+	const { setUser, deleteUser, currentUser } = useContext(LiveGameContext) as ILiveGameContext;
 
 	const [name, setName] = useLocalStorage<string>("spotalotName", teamsContext?.user?.userPrincipalName || "");
-	const [userReady, setUserReady] = useState<boolean>(false);
 
-	const onNameEnter = () => {
+	const onBtnEnterGame = () => {
 		if (teamsContext?.user?.id) {
 			const user = {
 				name,
 				score: 0,
 			} as ILiveGameUser;
 			setUser(teamsContext?.user?.id, user);
-			setUserReady(true);
+		}
+	};
+
+	const onBtnLeaveGame = () => {
+		if (teamsContext?.user?.id) {
+			deleteUser(teamsContext?.user?.id);
 		}
 	};
 
@@ -31,14 +35,19 @@ export const Onboarding: FunctionComponent<OnboardingProps> = () => {
 	};
 
 	return <div className={styles.centerOnPage}>
-		{userReady && <>
-			<Title3>Waiting for other users ...</Title3>
+		{currentUser && <div className={styles.displayWrapper}>
+			<div className={styles.centerSpaced}>
+				<Title3>Waiting for other users ...</Title3>
+			</div>
+			<div className={styles.centerSpaced}>
+				<Button size="large" appearance="secondary" onClick={() => onBtnLeaveGame()}>Leave game</Button>
+			</div>
 			<UserList showDistance={false} showScore={false} size="medium" />
-		</>}
-		{!userReady && <>
-			<Title3>Please enter your name:</Title3>
+		</div>}
+		{!currentUser && <>
+			<Title3 className={styles.subHeadline}>Please enter your name:</Title3>
 			<Input size="large" defaultValue={name} onChange={onNameChange} appearance="underline" className={styles.nameInput} />
-			<Button size="large" appearance="primary" onClick={() => onNameEnter()}>Enter game</Button>
+			<Button size="large" appearance="primary" onClick={() => onBtnEnterGame()}>Enter game</Button>
 		</>}
 	</div>;
 }

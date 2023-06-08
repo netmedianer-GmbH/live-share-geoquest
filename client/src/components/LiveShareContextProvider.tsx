@@ -12,6 +12,7 @@ export interface ILiveGameContext {
 	setGameState: (status: { status: AppGameState }) => void;
 	userMap: ReadonlyMap<string, ILiveGameUser>;
 	setUser: (key: string, value: ILiveGameUser) => void;
+	deleteUser: (key: string) => void;
 	currentUser?: ILiveGameUser;
 	timerStart1: OnStartTimerAction;
 	timerPause1: OnPauseTimerAction;
@@ -58,13 +59,15 @@ export const LiveShareContextProvider: FunctionComponent<LiveShareContextProvide
 	const [gameState, setGameState] = useLiveState("liveShareGeoQuestGameState", INITIAL_STATE);
 
 	// Init SharedMap GAME_USERS
-	const { map, setEntry } = useSharedMap<ILiveGameUser>("liveShareGeoQuestGameUsers");
+	const { map, setEntry, deleteEntry } = useSharedMap<ILiveGameUser>("liveShareGeoQuestGameUsers");
 	const [currentUser, setCurrentUser] = useState<ILiveGameUser>();
 	useEffect(() => {
 		const uid = teamsContext?.user?.id;
 		if (uid && map.has(uid)) {
 			const currentUser = map.get(uid) as ILiveGameUser;
 			setCurrentUser(currentUser);
+		} else {
+			setCurrentUser(undefined);
 		}
 	}, [map, teamsContext]);
 
@@ -85,6 +88,7 @@ export const LiveShareContextProvider: FunctionComponent<LiveShareContextProvide
 		setGameState,
 		userMap: map,
 		setUser: setEntry,
+		deleteUser: deleteEntry,
 		currentUser,
 		timerStart1: start1,
 		timerPause1: pause1,
