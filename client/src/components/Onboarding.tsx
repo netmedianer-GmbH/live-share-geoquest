@@ -1,4 +1,4 @@
-import { FunctionComponent, useContext, useState } from "react"
+import { FunctionComponent, useContext } from "react"
 import { Button, Input, InputProps, Title3 } from "@fluentui/react-components";
 import { useLocalStorage } from "usehooks-ts";
 import styles from "../styles/Onboarding.module.scss";
