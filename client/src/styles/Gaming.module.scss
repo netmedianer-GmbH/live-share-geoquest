@@ -1,14 +1,43 @@
 .gamingHeader {
 	height: 80px;
+	background-color: var(--colorBrandBackground2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.gamingQuestion {
+		margin-top: var(--spacingVerticalXS);
+	}
+}
+
+.mapCanvas {
+	display: flex;
+	height: 100%;
+	width: 100%;
+
+	.gamingLeft {
+		width: 300px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.guessButton {
+			width: 90%;
+			margin-top: var(--spacingVerticalM);
+			margin-bottom: var(--spacingVerticalXXL);
+		}
+	}
+
+	.gamingRight {
+		width: calc(100% - 300px);
+		height: 100%;
+		overflow: hidden;
+	}
 }
 
 .gamingCanvas {
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-}
-
-.mapCanvas {
-	height: 100%;
-	width: 100%;
 }

@@ -44,6 +44,7 @@ export interface ILiveGameUser {
 	score: number;
 	position?: IPosition;
 	positionSet?: boolean;
+	positionSetMillis?: number;
 }
 
 

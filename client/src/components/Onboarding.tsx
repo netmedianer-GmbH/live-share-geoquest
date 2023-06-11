@@ -45,7 +45,7 @@ export const Onboarding: FunctionComponent<OnboardingProps> = () => {
 			<div className={styles.centerSpaced}>
 				<Button size="large" appearance="secondary" onClick={() => onBtnLeaveGame()}>Leave game</Button>
 			</div>
-			<UserList showDistance={false} showScore={false} size="medium" />
+			<UserList showDistance={false} showScore={false} showHasGuessed={false} size="medium" />
 		</div>}
 		{!currentUser && <>
 			<Title3 className={styles.subHeadline}>Please enter your name:</Title3>

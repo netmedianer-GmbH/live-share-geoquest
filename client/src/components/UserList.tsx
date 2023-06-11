@@ -7,6 +7,7 @@ import styles from "../styles/UserList.module.scss";
 type UserListProps = {
 	showScore: boolean;
 	showDistance: boolean;
+	showHasGuessed: boolean;
 	size: TableContextValue["size"];
 }
 
@@ -14,7 +15,7 @@ export interface ILiveGameUserList extends ILiveGameUser {
 	key: string;
 }
 
-export const UserList: FunctionComponent<UserListProps> = ({ showScore, showDistance, size }) => {
+export const UserList: FunctionComponent<UserListProps> = ({ showScore, showDistance, showHasGuessed, size }) => {
 	const { userMap, question } = useContext(LiveGameContext) as ILiveGameContext;
 
 	const userList: ILiveGameUserList[] = [];
@@ -40,10 +41,11 @@ export const UserList: FunctionComponent<UserListProps> = ({ showScore, showDist
 	userList.forEach((user) => {
 		const distance = (user.position && question) ? `${DistanceHelper.getPositionDistance(user.position, question.location).toFixed(2)} km` : "---";
 
-		usersTable.push(<TableRow key={user.key}>
+		usersTable.push(<TableRow key={user.key} appearance={(user.positionSet) ? "brand" : "neutral"}>
 			{(showScore) ? <TableCell>{user.score.toFixed(2)} km</TableCell> : <></>}
 			<TableCell>{user.name}</TableCell>
 			{(showDistance) ? <TableCell>{distance}</TableCell> : <></>}
+			{(showHasGuessed) ? <TableCell>{(user.positionSet && user.positionSetMillis) ? `After ${(user.positionSetMillis / 1000).toFixed(1)} s` : "---"}</TableCell> : <></>}
 		</TableRow>);
 	});
 
@@ -54,6 +56,7 @@ export const UserList: FunctionComponent<UserListProps> = ({ showScore, showDist
 					{(showScore) ? <TableHeaderCell>Score</TableHeaderCell> : <></>}
 					<TableHeaderCell>User name</TableHeaderCell>
 					{(showDistance) ? <TableHeaderCell>Distance</TableHeaderCell> : <></>}
+					{(showHasGuessed) ? <TableHeaderCell>Guess fixed?</TableHeaderCell> : <></>}
 				</TableHeader>
 				<TableBody className={styles.userTableBody}>
 					{usersTable}

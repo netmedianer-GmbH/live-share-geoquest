@@ -4,7 +4,7 @@ import { ShareScreenStartRegular } from "@fluentui/react-icons";
 import { meeting, SdkError } from "@microsoft/teams-js";
 import { useLocalStorage } from "usehooks-ts";
 import { LiveGameContext, ILiveGameContext, IPosition, ILiveGameUser } from "./LiveShareContextProvider";
-import { DistanceHelper, TILE_PROVIDER, AppGameState, defaultPosition, QuestionType as QUESTION_TYPE, QuestionsHelper } from "../utils";
+import { DistanceHelper, TILE_PROVIDER, AppGameState, defaultPosition, QuestionType as QUESTION_TYPE, QuestionsHelper, countdownMillis, countdownGame } from "../utils";
 import { UserList } from ".";
 import styles from "../styles/GameSettings.module.scss";
 
@@ -49,7 +49,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 	const onGameResetBtn = () => {
 		userMap.forEach((user, key) => {
-			const updatedUser = { ...user, score: 0 } as ILiveGameUser;
+			const updatedUser = { ...user, score: 0, positionSet: false, positionSetMillis: undefined } as ILiveGameUser;
 			setUser(key, updatedUser);
 		});
 		setCurrentRound(0);
@@ -72,8 +72,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 	}
 
 
-	const countdownMillis = 10000;
-	const countdownGame = 30000;
 	// Statemachine
 	useEffect(() => {
 		let timer: number | undefined;
@@ -84,6 +82,14 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 			const nextQuestion = QuestionsHelper.getQuestion(persistedQuestionType);
 			setQuestion(nextQuestion);
 			timerStart1(countdownMillis);
+
+			userMap.forEach((user, key) => {
+				const updatedUser = { ...user } as ILiveGameUser;
+				updatedUser.positionSet = false;
+				updatedUser.positionSetMillis = undefined;
+
+				setUser(key, updatedUser);
+			});
 
 			timer = setTimeout(() => {
 				setGameState({ status: AppGameState.GAMING });
@@ -175,6 +181,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Users</Divider>
-		<UserList showScore={true} showDistance={true} size="extra-small" />
+		<UserList showScore={true} showDistance={true} showHasGuessed={false} size="extra-small" />
 	</>;
 }
