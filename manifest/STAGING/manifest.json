@@ -5,19 +5,19 @@
 	"id": "c4bd9830-f336-11ed-a05b-0242ac120003",
 	"packageName": "de.netmedia.teams.geoquest",
 	"name": {
-		"short": "GeoQuest STAGING",
-		"full": "GeoQuest STAGING - Group geoguessing game tor Teams"
+		"short": "GeoQuest",
+		"full": "GeoQuest (STAGING) - Real-time geoguessing game for Microsoft Teams meetings"
 	},
 	"developer": {
-		"name": "netmedianer GmbH",
+		"name": "Tobias Blum <github@tobiasblum.de>",
 		"mpnId": "",
-		"websiteUrl": "https://www.netmedia.de/apps/geoquest",
-		"privacyUrl": "https://www.netmedia.de/datenschutz",
-		"termsOfUseUrl": "https://www.netmedia.de/apps/termsofuse"
+		"websiteUrl": "https://github.com/nmtoblum/live-share-geoquest",
+		"privacyUrl": "https://github.com/nmtoblum/live-share-geoquest",
+		"termsOfUseUrl": "https://github.com/nmtoblum/live-share-geoquest"
 	},
 	"description": {
-		"short": "This is a geoguessing game for Microsoft Teams",
-		"full": "This is a geoguessing game for Microsoft Teams. Play it together and learn about places of the world."
+		"short": "This is a real-time geoguessing game for Microsoft Teams meetings",
+		"full": ""
 	},
 	"icons": {
 		"outline": "outline.png",
