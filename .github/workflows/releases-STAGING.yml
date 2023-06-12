@@ -1,0 +1,25 @@
+name: Release GeoQuest STAGING
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  tagged-release:
+    runs-on: ubuntu-latest
+    name: Create release
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Generating manifests
+        run: yarn manifest
+        working-directory: ./client
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "staging"
+          files: |
+            manifest/staging.zip
