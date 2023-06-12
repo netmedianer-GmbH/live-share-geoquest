@@ -6,18 +6,18 @@
 	"packageName": "de.netmedia.teams.geoquest",
 	"name": {
 		"short": "GeoQuest DEV",
-		"full": "GeoQuest DEV - Group geoguessing game tor Teams"
+		"full": "GeoQuest (DEV) - Real-time geo guessing game for Microsoft Teams meetings"
 	},
 	"developer": {
-		"name": "netmedianer GmbH",
+		"name": "Tobias Blum",
 		"mpnId": "",
-		"websiteUrl": "https://www.netmedia.de/apps/geoquest",
-		"privacyUrl": "https://www.netmedia.de/datenschutz",
-		"termsOfUseUrl": "https://www.netmedia.de/apps/termsofuse"
+		"websiteUrl": "https://github.com/nmtoblum/live-share-geoquest",
+		"privacyUrl": "https://github.com/nmtoblum/live-share-geoquest",
+		"termsOfUseUrl": "https://github.com/nmtoblum/live-share-geoquest"
 	},
 	"description": {
-		"short": "This is a geoguessing game for Microsoft Teams",
-		"full": "This is a geoguessing game for Microsoft Teams. Play it together and learn about places of the world."
+		"short": "This is a real-time geo guessing game for Microsoft Teams meetings",
+		"full": ""
 	},
 	"icons": {
 		"outline": "outline.png",
