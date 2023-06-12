@@ -2,6 +2,8 @@ name: Release GeoQuest STAGING
 
 on:
   push:
+    paths:
+      - manifest/**
     branches:
       - staging
     tags:
@@ -19,5 +21,6 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+          automatic_release_tag: "latest"
           files: |
             manifest/STAGING/*
