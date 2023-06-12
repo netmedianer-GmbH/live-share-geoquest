@@ -1,3 +1,5 @@
+![](https://img.shields.io/github/actions/workflow/status/nmtoblum/live-share-geoquest/azure-static-web-apps-brave-rock-018c9b503.yml) ![](https://img.shields.io/github/downloads/nmtoblum/live-share-geoquest/total) ![](https://img.shields.io/github/issues/nmtoblum/live-share-geoquest) ![](https://img.shields.io/github/license/nmtoblum/live-share-geoquest)
+
 # GeoQuest
 
 A fun geo-guessing game for Microsoft Teams. For example, as an icebreaker, or for small competitions during the work break.
@@ -46,3 +48,4 @@ To make the app as simple as possible, we set up an automatic deployment of the 
 ## FAQ
 
 ### License
+ The project is [licensed](LICENSE) under "Mozilla Public License Version 2.0".
