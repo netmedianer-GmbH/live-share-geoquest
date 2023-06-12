@@ -1,0 +1,67 @@
+{
+	"$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+	"version": "1.0.0",
+	"manifestVersion": "1.16",
+	"id": "c4bd9830-f336-11ed-a05b-0242ac120003",
+	"packageName": "de.netmedia.teams.geoquest",
+	"name": {
+		"short": "GeoQuest",
+		"full": "GeoQuest (STAGING) - Real-time geoguessing game for Microsoft Teams meetings"
+	},
+	"developer": {
+		"name": "Tobias Blum <github@tobiasblum.de>",
+		"mpnId": "",
+		"websiteUrl": "https://github.com/nmtoblum/live-share-geoquest",
+		"privacyUrl": "https://github.com/nmtoblum/live-share-geoquest",
+		"termsOfUseUrl": "https://github.com/nmtoblum/live-share-geoquest"
+	},
+	"description": {
+		"short": "This is a real-time geoguessing game for Microsoft Teams meetings",
+		"full": ""
+	},
+	"icons": {
+		"outline": "outline.png",
+		"color": "color.png"
+	},
+	"accentColor": "#a62246",
+	"configurableTabs": [
+		{
+			"configurationUrl": "https://brave-rock-018c9b503.3.azurestaticapps.net/config",
+			"canUpdateConfiguration": false,
+			"scopes": [
+				"groupchat"
+			],
+			"context": [
+				"meetingSidePanel",
+				"meetingStage"
+			]
+		}
+	],
+	"validDomains": [
+		"brave-rock-018c9b503.3.azurestaticapps.net"
+	],
+	"showLoadingIndicator": true,
+	"authorization": {
+		"permissions": {
+			"orgWide": [],
+			"resourceSpecific": [
+				{
+					"name": "MeetingStage.Write.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "ChannelMeetingStage.Write.Group",
+					"type": "Delegated"
+				},
+				{
+					"name": "LiveShareSession.ReadWrite.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "LiveShareSession.ReadWrite.Group",
+					"type": "Delegated"
+				}
+			]
+		}
+	}
+}

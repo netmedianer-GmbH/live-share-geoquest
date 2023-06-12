@@ -1,11 +1,11 @@
 import { FunctionComponent, useCallback, useContext, useEffect, useState } from "react"
 import { Map, Marker } from "pigeon-maps";
 import styles from "../styles/Gaming.module.scss";
-import { GameTimer } from "./GameTimer";
+import { UserList, GameTimer } from ".";
 import { LiveGameContext, ILiveGameContext, IPosition } from "./LiveShareContextProvider";
 import { TeamsContext, ITeamsContext } from "./TeamsContextProvider";
-import { defaultPosition } from "../utils/constants";
-import { Subtitle2 } from "@fluentui/react-components";
+import { countdownGame, defaultPosition } from "../utils/constants";
+import { Subtitle2, Button } from "@fluentui/react-components";
 import { MapProvider } from "../utils/MapProvider";
 
 type GamingProps = {
@@ -14,7 +14,7 @@ type GamingProps = {
 
 export const Gaming: FunctionComponent<GamingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
-	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider } = useContext(LiveGameContext) as ILiveGameContext;
+	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider, currentRound, numberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
 	const [markerPosition, setMarkerPosition] = useState<[number, number]>(defaultPosition);
 
 	useEffect(() => {
@@ -24,13 +24,13 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 
 
 	const onMapClicked = useCallback(({ latLng }: { latLng: [number, number] }) => {
-		setMarkerPosition(latLng);
+		// Only allow position changes when position is not yet fixed.
+		if (currentUser && teamsContext?.user?.id && !currentUser.positionSet) {
+			setMarkerPosition(latLng);
 
-		if (currentUser && teamsContext?.user?.id) {
 			const newPosition: IPosition = { lat: latLng[0], lng: latLng[1] };
 			const updatedUser = { ...currentUser };
 			updatedUser.position = newPosition;
-			updatedUser.positionSet = true;
 
 			setUser(teamsContext?.user?.id, updatedUser);
 		} else {
@@ -39,20 +39,37 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 	}, [currentUser, teamsContext, setUser]);
 
 
+	const onGuessBtnClicked = () => {
+		if (currentUser && teamsContext?.user?.id) {
+			const millisElapsed = countdownGame - timerMilliRemaining2;
+			const updatedUser = { ...currentUser };
+			updatedUser.positionSet = true;
+			updatedUser.positionSetMillis = millisElapsed;
+
+			setUser(teamsContext?.user?.id, updatedUser);
+		}
+	};
 
 	return <div className={styles.gamingCanvas}>
 		<div className={styles.gamingHeader}>
-			<GameTimer timerMilliRemaining={timerMilliRemaining2} />
-			{question && <Subtitle2>Your task: {question.question}</Subtitle2>}
+			<GameTimer prefix={`Round: ${currentRound} / ${numberOfRounds} - `} timerMilliRemaining={timerMilliRemaining2} />
+			<div className={styles.gamingQuestion}>{question && <Subtitle2>Your task: {question.question}</Subtitle2>}</div>
 		</div>
 		<div className={styles.mapCanvas}>
-			<Map
-				provider={MapProvider.getTileProvider(tileProvider)}
-				attribution={MapProvider.getAttribution(tileProvider)}
-				defaultZoom={2}
-				onClick={onMapClicked}>
-				<Marker anchor={markerPosition} />
-			</Map>
+			<div className={styles.gamingLeft}>
+				<Button className={styles.guessButton} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess</Button>
+
+				<UserList showDistance={false} showScore={false} showHasGuessed={true} size="small" />
+			</div>
+			<div className={styles.gamingRight}>
+				<Map
+					provider={MapProvider.getTileProvider(tileProvider)}
+					attribution={MapProvider.getAttribution(tileProvider)}
+					defaultZoom={2}
+					onClick={onMapClicked}>
+					{markerPosition && <Marker anchor={markerPosition} />}
+				</Map>
+			</div>
 		</div>
 	</div>;
 }

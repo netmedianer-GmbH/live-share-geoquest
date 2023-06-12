@@ -5,10 +5,19 @@
 }
 
 .scoringLeft {
-	width: 400px;
+	width: 450px;
 }
 
 .scoringRight {
 	width: 100%;
 	overflow: hidden;
+}
+
+// See: https://github.com/mariusandra/pigeon-maps/issues/44
+.targetMarker {
+	height: 29px;
+	width: 29px;
+	position: absolute;
+	left: -1px;
+	top: 15px;
 }

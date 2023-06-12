@@ -3,6 +3,15 @@
 	margin-bottom: 0.5rem;
 }
 
+.gameSettingsSlider {
+	display: flex;
+	flex-direction: column;
+
+	input {
+		width: 100%;
+	}
+}
+
 .spacer {
 	margin-top: 1rem;
 }
