@@ -50,8 +50,20 @@ To make the app as easy to use as possible, we set up an automatic deployment of
 ### License
 The project is [licensed](LICENSE) under "Mozilla Public License Version 2.0".
 
-### Contributing
-Contributions are always welcome as pull requests.
+### Contributing / Minimal Path to Awesome
+Contributions are always welcome as pull requests. To run a local copy of this project, so the following:
+
+- Clone this repository
+- Make sure you're using node.js 16 or 18
+- In the command line run:
+	- `cd client/`
+	- `yarn` or `npm i` (if you're using npm)
+	- `yarn dev` or `npm run dev` (to start local dev server on port 3000)
+- Start a tunneling service like [ngrok](https://ngrok.com/), the new [dev tunnels](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/cli-commands) by Microsoft (tunnels can keep their hostnames for up to 30 days for free), ... or start the project in [GitHub Codespaces](https://github.com/features/codespaces) (public URL of the codespace is static as long as you don't delete the codespace) and make the port public. It doesn't matter which tool you choose, you should now have a publically available https URL.
+- Now edit the DEV [manifest.json](manifest/DEV/manifest.json) and replace the domain in `configurationUrl` and `validDomains` with your public hostname from the step below.
+- Now run `yarn manifest` or `npm run manifest`. You should find your Teams App package under the path `manifest/dev.zip`.
+- Start a new meeting in Teams (a meet-now meeting does also work) and sideload the app package directly into the meeting.
+- Now you can add the app "GeoQuest" the the meeting.
 
 ### Problems & other questions
 Feel free to [open an issue](https://github.com/nmtoblum/live-share-geoquest/issues/new) if you have problems using this app or have other questions.
