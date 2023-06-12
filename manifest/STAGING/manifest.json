@@ -17,7 +17,7 @@
 	},
 	"description": {
 		"short": "This is a real-time geo guessing game for Microsoft Teams meetings",
-		"full": ""
+		"full": "This is a real-time geo guessing game for Microsoft Teams meetings"
 	},
 	"icons": {
 		"outline": "outline.png",
