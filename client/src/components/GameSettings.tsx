@@ -4,7 +4,7 @@ import { ShareScreenStartRegular } from "@fluentui/react-icons";
 import { meeting, SdkError } from "@microsoft/teams-js";
 import { useLocalStorage } from "usehooks-ts";
 import { LiveGameContext, ILiveGameContext, IPosition, ILiveGameUser } from "./LiveShareContextProvider";
-import { DistanceHelper, TILE_PROVIDER, AppGameState, defaultPosition, QuestionType as QUESTION_TYPE, QuestionsHelper, countdownMillis, countdownGame } from "../utils";
+import { DistanceHelper, TILE_PROVIDER, AppGameState, defaultPosition, QuestionType as QUESTION_TYPE, QuestionsHelper, countdownMillis, countdownGame, ScoreHelper, IResult } from "../utils";
 import { UserList } from ".";
 import styles from "../styles/GameSettings.module.scss";
 
@@ -49,7 +49,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 	const onGameResetBtn = () => {
 		userMap.forEach((user, key) => {
-			const updatedUser = { ...user, score: 0, positionSet: false, positionSetMillis: undefined } as ILiveGameUser;
+			const updatedUser = { ...user, score: 0, position: undefined, positionSet: false, positionSetMillis: undefined } as ILiveGameUser;
 			setUser(key, updatedUser);
 		});
 		setCurrentRound(0);
@@ -87,6 +87,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 				const updatedUser = { ...user } as ILiveGameUser;
 				updatedUser.positionSet = false;
 				updatedUser.positionSetMillis = undefined;
+				updatedUser.lastScore = 0;
 
 				setUser(key, updatedUser);
 			});
@@ -105,17 +106,29 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 		if (gameState.status === AppGameState.SCORING) {
 			if (question) {
+				const results: IResult[] = [];
 				userMap.forEach((user, key) => {
-					const guessedPosition: IPosition = (user.position) ? user.position : {
-						lat: defaultPosition[0],
-						lng: defaultPosition[1],
-					};
-					const distance = DistanceHelper.getPositionDistance(guessedPosition, question.location);
+					const distance = (user.position && user.positionSet) ? DistanceHelper.getPositionDistance(user.position, question.location) : -1;
 
-					const updatedUser = { ...user } as ILiveGameUser;
-					updatedUser.score = (updatedUser.score || 0) + distance;
+					results.push({
+						key,
+						distance,
+						positionSetMillis: user.positionSetMillis || -1
+					} as IResult);
+				});
 
-					setUser(key, updatedUser);
+				const scoredResults = ScoreHelper.calculateScores(results);
+
+				userMap.forEach((user, key) => {
+					const userScore = scoredResults.find(u => u.key === key);
+
+					if (userScore && userScore.points) {
+						const updatedUser = { ...user } as ILiveGameUser;
+						updatedUser.lastScore = userScore.points;
+						updatedUser.score = (updatedUser.score || 0) + userScore.points;
+
+						setUser(key, updatedUser);
+					}
 				});
 			}
 		}
@@ -181,6 +194,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Users</Divider>
-		<UserList showScore={true} showDistance={true} showHasGuessed={false} size="extra-small" />
+		<UserList showScore={true} showDistance={true} size="extra-small" />
 	</>;
 }

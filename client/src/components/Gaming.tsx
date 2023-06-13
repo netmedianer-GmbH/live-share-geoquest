@@ -59,7 +59,7 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 			<div className={styles.gamingLeft}>
 				<Button className={styles.guessButton} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess</Button>
 
-				<UserList showDistance={false} showScore={false} showHasGuessed={true} size="small" />
+				<UserList showHasGuessed={true} size="small" />
 			</div>
 			<div className={styles.gamingRight}>
 				<Map

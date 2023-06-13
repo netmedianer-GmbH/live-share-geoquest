@@ -42,6 +42,7 @@ export interface IPosition {
 export interface ILiveGameUser {
 	name: string;
 	score: number;
+	lastScore: number;
 	position?: IPosition;
 	positionSet?: boolean;
 	positionSetMillis?: number;
