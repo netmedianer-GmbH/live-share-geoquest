@@ -9,10 +9,10 @@ type CountdownProps = {
 };
 
 export const Countdown: FunctionComponent<CountdownProps> = () => {
-	const { question, timerMilliRemaining1, currentRound, numberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
+	const { question, timerMilliRemaining1, currentRound } = useContext(LiveGameContext) as ILiveGameContext;
 
 	return <div className={styles.centerOnPage}>
-		<Title3>Playing round: {currentRound} / {numberOfRounds}</Title3>
+		<Title3>Playing round: {currentRound}</Title3>
 
 		<Title3><GameTimer timerMilliRemaining={timerMilliRemaining1} /></Title3>
 		<Title3 className={styles.question}>Your task: <br />{question?.question}</Title3>

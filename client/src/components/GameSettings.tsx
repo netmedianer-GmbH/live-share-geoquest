@@ -1,10 +1,10 @@
 import { FunctionComponent, ReactNode, useContext, useEffect } from "react"
-import { Button, Divider, Label, Select, Slider, useId } from "@fluentui/react-components";
+import { Button, Divider,  Select } from "@fluentui/react-components";
 import { ShareScreenStartRegular } from "@fluentui/react-icons";
 import { meeting, SdkError } from "@microsoft/teams-js";
 import { useLocalStorage } from "usehooks-ts";
-import { LiveGameContext, ILiveGameContext, IPosition, ILiveGameUser } from "./LiveShareContextProvider";
-import { DistanceHelper, TILE_PROVIDER, AppGameState, defaultPosition, QuestionType as QUESTION_TYPE, QuestionsHelper, countdownMillis, countdownGame, ScoreHelper, IResult } from "../utils";
+import { LiveGameContext, ILiveGameContext, ILiveGameUser } from "./LiveShareContextProvider";
+import { DistanceHelper, TILE_PROVIDER, AppGameState, QuestionType as QUESTION_TYPE, QuestionsHelper, countdownMillis, countdownGame, ScoreHelper, IResult } from "../utils";
 import { UserList } from ".";
 import styles from "../styles/GameSettings.module.scss";
 
@@ -13,7 +13,6 @@ type GameSettingsProps = {
 };
 
 export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
-	const id = useId();
 	const {
 		gameState, setGameState,
 		userMap, setUser,
@@ -21,11 +20,10 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		timerStart2,
 		question, setQuestion,
 		tileProvider, setTileProvider,
-		currentRound, setCurrentRound,
-		setNumberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
+		currentRound, setCurrentRound
+	} = useContext(LiveGameContext) as ILiveGameContext;
 	const [, setPersistedTileProvider] = useLocalStorage<TILE_PROVIDER>("liveShareGeoQuestTileProvider", TILE_PROVIDER.WATERCOLOR_BACKGROUND);
 	const [persistedQuestionType, setPersistedQuestionType] = useLocalStorage<QUESTION_TYPE>("liveShareGeoQuestQuestionType", QUESTION_TYPE.CAPITALS);
-	const [persistedNumberOfRounds, setPersistedNumberOfRounds] = useLocalStorage<number>("liveShareGeoQuestNumberOfRounds", 5);
 
 
 	// Share Button
@@ -64,11 +62,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 	const onQuestionTypeChanged = (data: { value: string }) => {
 		setPersistedQuestionType(data.value as unknown as QUESTION_TYPE);
-	}
-
-	const onNumberOfRoundsChanged = (data: { value: number }) => {
-		setPersistedNumberOfRounds(data.value);
-		setNumberOfRounds(data.value);
 	}
 
 
@@ -174,11 +167,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game settings</Divider>
-		<div className={styles.gameSettingsSlider}>
-			<Label htmlFor={id}>Number of rounds: {persistedNumberOfRounds}</Label>
-			<Slider min={1} max={20} id={id} value={persistedNumberOfRounds} onChange={(_e, data) => onNumberOfRoundsChanged(data)} />
-		</div>
-
 		<Select value={tileProvider} onChange={(_e, data) => onTileProviderChanged(data)}>
 			{tileProviders.map(p => {
 				return <option key={p.key} value={p.key}>{p.value}</option>;

@@ -14,7 +14,7 @@ type GamingProps = {
 
 export const Gaming: FunctionComponent<GamingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
-	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider, currentRound, numberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
+	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider, currentRound } = useContext(LiveGameContext) as ILiveGameContext;
 	const [markerPosition, setMarkerPosition] = useState<[number, number]>(defaultPosition);
 
 	useEffect(() => {
@@ -52,7 +52,7 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 
 	return <div className={styles.gamingCanvas}>
 		<div className={styles.gamingHeader}>
-			<GameTimer prefix={`Round: ${currentRound} / ${numberOfRounds} - `} timerMilliRemaining={timerMilliRemaining2} />
+			<GameTimer prefix={`Round: ${currentRound} - `} timerMilliRemaining={timerMilliRemaining2} />
 			<div className={styles.gamingQuestion}>{question && <Subtitle2>Your task: {question.question}</Subtitle2>}</div>
 		</div>
 		<div className={styles.mapCanvas}>

@@ -30,8 +30,6 @@ export interface ILiveGameContext {
 	setTileProvider: (tileProvider: TILE_PROVIDER) => void;
 	currentRound: number;
 	setCurrentRound: (round: number) => void;
-	numberOfRounds: number;
-	setNumberOfRounds: (rounds: number) => void;
 }
 
 // Define LiveGame user
@@ -91,10 +89,6 @@ export const LiveShareContextProvider: FunctionComponent<LiveShareContextProvide
 	// Init LiveGame GAME_ROUND
 	const [currentRound, setCurrentRound] = useSharedState<number>("liveShareGeoQuestCurrentRound", 0);
 
-	// Init LiveGame GAME_NUMBERROUNDS, read from local storage for inital value
-	const [persistedNumberOfRounds] = useLocalStorage<number>("liveShareGeoQuestNumberOfRounds", 5);
-	const [numberOfRounds, setNumberOfRounds] = useSharedState<number>("liveShareGeoQuestNumberOfRounds", persistedNumberOfRounds);
-
 
 	return <LiveGameContext.Provider value={{
 		gameState,
@@ -119,8 +113,6 @@ export const LiveShareContextProvider: FunctionComponent<LiveShareContextProvide
 		setTileProvider,
 		currentRound,
 		setCurrentRound,
-		numberOfRounds,
-		setNumberOfRounds,
 	}}>
 		{children}
 	</LiveGameContext.Provider>
