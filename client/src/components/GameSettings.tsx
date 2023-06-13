@@ -144,6 +144,12 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 	const tileProviders = Object.entries(TILE_PROVIDER).map(([key, value]) => ({ key, value }));
 	const questionTypes = Object.entries(QUESTION_TYPE).map(([key, value]) => ({ key, value }));
 
+
+	const appearanceNextRoundBtn = (gameState.status === AppGameState.ONBOARDING || gameState.status === AppGameState.SCORING) ? "primary" : "outline";
+	const appearanceFinishRoundBtn = (gameState.status === AppGameState.GAMING) ? "primary" : "outline";
+	const disabledNextRoundBtn = (gameState.status === AppGameState.COUNTDOWN || gameState.status === AppGameState.GAMING);
+	const disabledFinishRoundBtn = (gameState.status !== AppGameState.GAMING);
+
 	return <>
 		<div className={styles.buttonGroup}>
 			<Button
@@ -158,8 +164,9 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Game control - Round: {currentRound}</Divider>
 		<div className={styles.buttonGroup}>
-			<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={(gameState.status === AppGameState.ONBOARDING) ? "primary" : "outline"}>Onboarding</Button>
-			<Button onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)} appearance={(gameState.status === AppGameState.COUNTDOWN) ? "primary" : "outline"}>Start next round</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={"outline"}>Onboarding</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)} appearance={appearanceNextRoundBtn} disabled={disabledNextRoundBtn}>Start next round</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.SCORING)} appearance={appearanceFinishRoundBtn} disabled={disabledFinishRoundBtn}>Finish round now</Button>
 
 			<div className={styles.spacer}></div>
 			<Button onClick={() => onGameResetBtn()} appearance={"secondary"}>Reset game</Button>
