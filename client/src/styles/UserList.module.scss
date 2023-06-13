@@ -9,3 +9,8 @@
 }
 
 .userTableBody {}
+
+.nowrap {
+	display: inline-block;
+		word-break: break-word;
+}
