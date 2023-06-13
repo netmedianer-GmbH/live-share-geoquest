@@ -183,7 +183,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		<div className={styles.spacer}></div>
 		<Select value={persistedQuestionType} onChange={(_e, data) => onQuestionTypeChanged(data)}>
 			{questionTypes.map(p => {
-				return <option key={p.key} value={p.key}>{p.value}</option>;
+				return <option key={p.key} value={p.value}>{p.value}</option>;
 			})}
 		</Select>
 
