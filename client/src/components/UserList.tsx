@@ -39,16 +39,22 @@ export const UserList: FunctionComponent<UserListProps> = ({ showScore = false, 
 	});
 
 	const usersTable: ReactNode[] = [];
+	let position = 1;
 	userList.forEach((user) => {
 		const distance = (user.position && question) ? `${DistanceHelper.getPositionDistance(user.position, question.location).toFixed(2)} km` : "---";
 
 		const suffixLastScore = (showLastScore && user.lastScore) ? ` (+${user.lastScore.toFixed(0)})` : "";
+		let suffixMedal = "";
+		if (user.score > 0 && position === 1) suffixMedal = " 🥇";
+		if (user.score > 0 && position === 2) suffixMedal = " 🥈";
+		if (user.score > 0 && position === 3) suffixMedal = " 🥉";
 		usersTable.push(<TableRow key={user.key} appearance={(user.positionSet) ? "brand" : "neutral"}>
 			{(showScore) ? <TableCell>{user.score.toFixed(0)}{suffixLastScore}</TableCell> : <></>}
-			<TableCell>{user.name}</TableCell>
+			<TableCell>{user.name}{suffixMedal}</TableCell>
 			{(showDistance) ? <TableCell>{distance}</TableCell> : <></>}
 			{(showHasGuessed) ? <TableCell>{(user.positionSet && user.positionSetMillis) ? `After ${(user.positionSetMillis / 1000).toFixed(1)} s` : "---"}</TableCell> : <></>}
 		</TableRow>);
+		position++;
 	});
 
 	return (
