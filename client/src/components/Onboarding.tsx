@@ -10,7 +10,7 @@ type OnboardingProps = {
 
 export const Onboarding: FunctionComponent<OnboardingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
-	const { setUser, deleteUser, currentUser, numberOfRounds } = useContext(LiveGameContext) as ILiveGameContext;
+	const { setUser, deleteUser, currentUser } = useContext(LiveGameContext) as ILiveGameContext;
 
 	const [name, setName] = useLocalStorage<string>("spotalotName", teamsContext?.user?.userPrincipalName || "");
 
@@ -35,9 +35,6 @@ export const Onboarding: FunctionComponent<OnboardingProps> = () => {
 	};
 
 	return <div className={styles.centerOnPage}>
-		<div className={styles.centerSpaced}>
-			<Title3>Number of rounds: {numberOfRounds}</Title3>
-		</div>
 		{currentUser && <div className={styles.displayWrapper}>
 			<div className={styles.centerSpaced}>
 				<Title3>Waiting for other users ...</Title3>
@@ -45,7 +42,7 @@ export const Onboarding: FunctionComponent<OnboardingProps> = () => {
 			<div className={styles.centerSpaced}>
 				<Button size="large" appearance="secondary" onClick={() => onBtnLeaveGame()}>Leave game</Button>
 			</div>
-			<UserList showDistance={false} showScore={false} showHasGuessed={false} size="medium" />
+			<UserList size="medium" />
 		</div>}
 		{!currentUser && <>
 			<Title3 className={styles.subHeadline}>Please enter your name:</Title3>

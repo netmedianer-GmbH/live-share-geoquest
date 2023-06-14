@@ -24,8 +24,12 @@
 
 		.guessButton {
 			width: 90%;
-			margin-top: var(--spacingVerticalM);
+			margin-top: var(--spacingVerticalL);
 			margin-bottom: var(--spacingVerticalXXL);
+			&.animated {
+				box-shadow: 0 0 0 0 rgba(17, 94, 163, 0.9);
+				animation: pulsing 2.5s infinite cubic-bezier(0.66, 0, 0, 1);
+			}
 		}
 	}
 
@@ -40,4 +44,12 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+}
+
+
+@keyframes pulsing {
+	to {
+		box-shadow: 0 0 0 15px rgba(17, 94, 163, 0);
+		background-color: var(--colorBrandBackgroundHover);
+	}
 }

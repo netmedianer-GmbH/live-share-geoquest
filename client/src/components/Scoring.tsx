@@ -33,7 +33,7 @@ export const Scoring: FunctionComponent<ScoringProps> = () => {
 
 	return <div className={styles.scoringWrapper}>
 		<div className={styles.scoringLeft}>
-			<UserList showDistance={true} showScore={true} showHasGuessed={false} size="small" />
+			<UserList showDistance={true} showScore={true} showLastScore={true} size="small" />
 		</div>
 		<div className={styles.scoringRight}>
 			<Map
