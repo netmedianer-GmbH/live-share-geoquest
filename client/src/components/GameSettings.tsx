@@ -189,6 +189,6 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 
 
 		<Divider className={styles.gameSettingsDivider} appearance="brand">Users</Divider>
-		<UserList showScore={true} showDistance={true} size="extra-small" />
+		<UserList showScore={true} showDistance={false} size="extra-small" />
 	</>;
 }
