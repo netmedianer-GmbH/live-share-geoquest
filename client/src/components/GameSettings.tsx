@@ -23,7 +23,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		currentRound, setCurrentRound
 	} = useContext(LiveGameContext) as ILiveGameContext;
 	const [, setPersistedTileProvider] = useLocalStorage<TILE_PROVIDER>("liveShareGeoQuestTileProvider", TILE_PROVIDER.WATERCOLOR_BACKGROUND);
-	const [persistedQuestionType, setPersistedQuestionType] = useLocalStorage<QUESTION_TYPE>("liveShareGeoQuestQuestionType", QUESTION_TYPE.CAPITALS);
+	const [persistedQuestionType, setPersistedQuestionType] = useLocalStorage<string>("liveShareGeoQuestQuestionType", QUESTION_TYPE.CAPITALS);
 
 
 	// Share Button

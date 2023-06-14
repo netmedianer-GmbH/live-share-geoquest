@@ -65,7 +65,7 @@ export class QuestionsHelper {
 		} as IQuestion;
 	}
 
-	public static getQuestion(questionType: QuestionType): IQuestion {
+	public static getQuestion(questionType: string): IQuestion {
 		if (questionType === QuestionType.CAPITALS) {
 			return QuestionsHelper.getCapitalQuestion();
 		} else {
