@@ -1,10 +1,10 @@
-import { FunctionComponent, useCallback, useContext, useEffect, useState } from "react"
+import { FunctionComponent, useCallback, useContext, useState } from "react"
 import { Map, Marker } from "pigeon-maps";
 import styles from "../styles/Gaming.module.scss";
 import { UserList, GameTimer } from ".";
 import { LiveGameContext, ILiveGameContext, IPosition } from "./LiveShareContextProvider";
 import { TeamsContext, ITeamsContext } from "./TeamsContextProvider";
-import { countdownGame, defaultPosition } from "../utils/constants";
+import { countdownGame } from "../utils/constants";
 import { Subtitle2, Button } from "@fluentui/react-components";
 import { MapProvider } from "../utils/MapProvider";
 
@@ -15,12 +15,7 @@ type GamingProps = {
 export const Gaming: FunctionComponent<GamingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
 	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider, currentRound } = useContext(LiveGameContext) as ILiveGameContext;
-	const [markerPosition, setMarkerPosition] = useState<[number, number]>(defaultPosition);
-
-	useEffect(() => {
-		onMapClicked({ latLng: defaultPosition });
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	const [markerPosition, setMarkerPosition] = useState<[number, number]>();
 
 
 	const onMapClicked = useCallback(({ latLng }: { latLng: [number, number] }) => {
@@ -57,7 +52,7 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 		</div>
 		<div className={styles.mapCanvas}>
 			<div className={styles.gamingLeft}>
-				<Button className={`${styles.guessButton} ${(!currentUser?.positionSet) ? styles.animated : ""}`} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess</Button>
+				<Button className={`${styles.guessButton} ${(!currentUser?.positionSet) ? styles.animated : ""}`} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess early for extra points</Button>
 				<UserList showHasGuessed={true} size="small" />
 			</div>
 			<div className={styles.gamingRight}>

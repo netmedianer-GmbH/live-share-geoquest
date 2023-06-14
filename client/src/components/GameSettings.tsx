@@ -101,7 +101,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 			if (question) {
 				const results: IResult[] = [];
 				userMap.forEach((user, key) => {
-					const distance = (user.position && user.positionSet) ? DistanceHelper.getPositionDistance(user.position, question.location) : -1;
+					const distance = (user.position) ? DistanceHelper.getPositionDistance(user.position, question.location) : -1;
 
 					results.push({
 						key,
