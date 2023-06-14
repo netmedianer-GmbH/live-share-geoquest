@@ -57,8 +57,7 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 		</div>
 		<div className={styles.mapCanvas}>
 			<div className={styles.gamingLeft}>
-				<Button className={styles.guessButton} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess</Button>
-
+				<Button className={`${styles.guessButton} ${(!currentUser?.positionSet) ? styles.animated : ""}`} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess</Button>
 				<UserList showHasGuessed={true} size="small" />
 			</div>
 			<div className={styles.gamingRight}>
