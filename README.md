@@ -1,8 +1,12 @@
-![](https://img.shields.io/github/actions/workflow/status/nmtoblum/live-share-geoquest/azure-static-web-apps-brave-rock-018c9b503.yml) ![](https://img.shields.io/github/downloads/nmtoblum/live-share-geoquest/total) ![](https://img.shields.io/github/issues/nmtoblum/live-share-geoquest) ![](https://img.shields.io/github/license/nmtoblum/live-share-geoquest)
+![](https://img.shields.io/github/actions/workflow/status/nmtoblum/live-share-geoquest/azure-static-web-apps-brave-rock-018c9b503.yml) [![](https://img.shields.io/github/downloads/nmtoblum/live-share-geoquest/total)](https://github.com/nmtoblum/live-share-geoquest/releases/download/latest/staging.zip) ![](https://img.shields.io/github/issues/nmtoblum/live-share-geoquest) ![](https://img.shields.io/github/license/nmtoblum/live-share-geoquest)
 
 # GeoQuest
 
+
 A fun geo-guessing game for Microsoft Teams. For example, as an icebreaker, or for small competitions during the work break.
+
+## Demo video
+[![](docs/assets/thumbnail.png)](https://youtu.be/6xYLe0WE0cs)
 
 ##  Project summary
 
@@ -30,11 +34,14 @@ Since the focus is on using the LiveShare SDK, the Teams app was deliberately im
 For more complex scenarios, it is of course possible to use the Teams Toolkit, and this solution can also be migrated to it later without any problems if the additional features of the framework are ever needed.
 
 ### How to use it - _Installation_
-To make the app as easy to use as possible, we set up an automatic deployment of the app via GitHub Action to an Azure Static Web App. From there, it can be used directly. We provide the suitable manifest for download [here](https://github.com/nmtoblum/live-share-geoquest/releases/download/staging/staging.zip). This allows the app to be easily installed in the tenant or side-loaded directly into a meeting. That's it!
+To make the app as easy to use as possible, we set up an automatic deployment of the app via GitHub Action to an Azure Static Web App. From there, it can be used directly. We provide the suitable manifest for download [here](https://github.com/nmtoblum/live-share-geoquest/releases/download/latest/staging.zip). This allows the app to be easily installed in the tenant or side-loaded directly into a meeting. That's it!
+> :warning: Please use this package and hosted version only for trying it out and/or demoing the solution. We do not guarentee that it will work forever. Deploy your own version if you want to use it regularly.
 
 ## About us
 
 ### Who we are
+- [Tobias Blum](https://linkedin.com/in/tobiasblum) ([nmtoblum](https://github.com/nmtoblum)) - Senior Developer & Microsoft 365 architect
+- [Ruslan Schuh](https://linkedin.com/in/ruslan-schuh) ([ruslan-s](https://github.com/ruslan-s)) - Senior Developer
 
 ### What we learned
 - Building a Teams app is super easy, when you know how to build web apps. Just add a manifest and you're done!
@@ -42,7 +49,7 @@ To make the app as easy to use as possible, we set up an automatic deployment of
 - Making your Teams app real-time is even more simple, because the [LiveShare SDK](https://github.com/microsoft/live-share-sdk) brings everything you need. No need to book Azure services and complicated deployments. Everything is already there and it's free to use.
 - The LiveShare (core) SDK abstracts much of the complexity that implementations with Azure Fluid Relay entail. However, all native Fluid objects can still be used if needed.
 - The [live-share-react](https://github.com/microsoft/live-share-sdk/tree/main/packages/live-share-react) library (preview)  reduces the complexity even more.
-- The support by Microsoft for the LiveShare SDK is great! Thanks [@ryanbliss](https://github.com/ryanbliss) for the help.
+- The support by Microsoft for the LiveShare SDK is great! Thanks [@ryanbliss](https://github.com/ryanbliss) for the [help](https://github.com/microsoft/live-share-sdk/issues/574).
 
 
 ## FAQ
