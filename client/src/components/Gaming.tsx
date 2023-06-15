@@ -15,7 +15,7 @@ type GamingProps = {
 export const Gaming: FunctionComponent<GamingProps> = () => {
 	const { teamsContext } = useContext(TeamsContext) as ITeamsContext;
 	const { question, timerMilliRemaining2, currentUser, setUser, tileProvider, currentRound } = useContext(LiveGameContext) as ILiveGameContext;
-	const [markerPosition, setMarkerPosition] = useState<[number, number]>();
+	const [ markerPosition, setMarkerPosition ] = useState<[number, number]>();
 
 
 	const onMapClicked = useCallback(({ latLng }: { latLng: [number, number] }) => {
@@ -51,18 +51,20 @@ export const Gaming: FunctionComponent<GamingProps> = () => {
 			<div className={styles.gamingQuestion}>{question && <Subtitle2>Your task: {question.question}</Subtitle2>}</div>
 		</div>
 		<div className={styles.mapCanvas}>
-			<div className={styles.gamingLeft}>
-				<Button className={`${styles.guessButton} ${(!currentUser?.positionSet) ? styles.animated : ""}`} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess early for extra points</Button>
+			{/* <div className={styles.gamingLeft}>
 				<UserList showHasGuessed={true} size="small" />
-			</div>
+			</div> */}
 			<div className={styles.gamingRight}>
-				<Map
-					provider={MapProvider.getTileProvider(tileProvider)}
-					attribution={MapProvider.getAttribution(tileProvider)}
-					defaultZoom={2}
-					onClick={onMapClicked}>
-					{markerPosition && <Marker anchor={markerPosition} />}
-				</Map>
+				<Button className={`${styles.guessButton} ${(!currentUser?.positionSet) ? styles.animated : ""}`} appearance="primary" onClick={() => onGuessBtnClicked()} disabled={currentUser?.positionSet}>Fix your guess early for extra points</Button>
+				<div className={styles.mapArea}>
+					<Map
+						provider={MapProvider.getTileProvider(tileProvider)}
+						attribution={MapProvider.getAttribution(tileProvider)}
+						defaultZoom={2}
+						onClick={onMapClicked}>
+						{markerPosition && <Marker anchor={markerPosition} />}
+					</Map>
+				</div>
 			</div>
 		</div>
 	</div>;
