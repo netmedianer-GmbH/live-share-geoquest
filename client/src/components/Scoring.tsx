@@ -16,23 +16,22 @@ type ScoringProps = {
 export const Scoring: FunctionComponent<ScoringProps> = () => {
 	const { question, userMap, tileProvider } = useContext(LiveGameContext) as ILiveGameContext;
 	const { teamsContext } = useContext(TeamsContext);
-	const [roundWinner, setRoundWinner] = useState<ILiveGameUser>();
 	const ttsService = new TTS();
 	const [ markers, setMarkers ] = useState<React.ReactNode>([]);
 
 	useEffect(() => {
 		const mrks: ReactNode[] = [];
-		const userDistances = Array<{ user: ILiveGameUser, distance: number }>();
+		let winner: ILiveGameUser | undefined;
 		userMap.forEach((user, key) => {
+			if (!winner || winner.lastScore < user.lastScore) {
+				winner = user;
+			}
 			if (user.position) {
 				const colorMarker = (key === teamsContext?.user?.id) ? "var(--colorPaletteRedBackground3)" : "var(--colorNeutralForeground2)";
 				const markerPosition: [number, number] = [user.position?.lat, user.position?.lng];
 				mrks.push(<Marker key={key} anchor={markerPosition} color={colorMarker} />);
 			}
 
-			const distance = (user.position && question) ?
-				DistanceHelper.getPositionDistance(user.position, question.location) : 0;
-			userDistances.push({ user, distance });
 		});
 
 		if (question) {
@@ -44,18 +43,10 @@ export const Scoring: FunctionComponent<ScoringProps> = () => {
 
 		setMarkers(mrks);
 
-		if (!!userDistances.length) {
-			const sorted = userDistances.sort((a, b) => a.distance - b.distance)[0];
-			if (sorted) {
-				setRoundWinner(sorted.user);
-			}
+		if (winner) {
+			ttsService.announceRoundWinner(winner?.name || '');
 		}
-
 	}, []);
-
-	useEffect(() => {
-		ttsService.announceRoundWinner(roundWinner?.name || '');
-	}, [roundWinner]);
 
 	return <div className={styles.scoringWrapper}>
 		<div className={styles.scoringLeft}>

@@ -93,11 +93,11 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		if (gameState.status === AppGameState.GAMING) {
 			timerStart2(countdownGame);
 			timer = setTimeout(() => {
-				setGameState({ status: AppGameState.SCORING });
+				setGameState({ status: AppGameState.CALCULATING });
 			}, countdownGame);
 		}
 
-		if (gameState.status === AppGameState.SCORING) {
+		if (gameState.status === AppGameState.CALCULATING) {
 			if (question) {
 				const results: IResult[] = [];
 				userMap.forEach((user, key) => {
@@ -124,6 +124,8 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 					}
 				});
 			}
+
+			setGameState({ status: AppGameState.SCORING });
 		}
 
 		return () => {
@@ -132,7 +134,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [gameState.status, setGameState, setQuestion, timerStart1, timerStart2, setUser]);
+	}, [gameState.status]);
 
 
 	const users: ReactNode[] = [];
@@ -166,7 +168,7 @@ export const GameSettings: FunctionComponent<GameSettingsProps> = () => {
 		<div className={styles.buttonGroup}>
 			<Button onClick={() => onGameControlBtn(AppGameState.ONBOARDING)} appearance={"outline"}>Onboarding</Button>
 			<Button onClick={() => onGameControlBtn(AppGameState.COUNTDOWN)} appearance={appearanceNextRoundBtn} disabled={disabledNextRoundBtn}>Start next round</Button>
-			<Button onClick={() => onGameControlBtn(AppGameState.SCORING)} appearance={appearanceFinishRoundBtn} disabled={disabledFinishRoundBtn}>Finish round now</Button>
+			<Button onClick={() => onGameControlBtn(AppGameState.CALCULATING)} appearance={appearanceFinishRoundBtn} disabled={disabledFinishRoundBtn}>Finish round now</Button>
 
 			<div className={styles.spacer}></div>
 			<Button onClick={() => onGameResetBtn()} appearance={"secondary"}>Reset game</Button>

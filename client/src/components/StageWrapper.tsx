@@ -23,11 +23,6 @@ export const StageWrapper: FunctionComponent<StageWrapperProps> = () => {
 		{(gameState.status === AppGameState.ONBOARDING) &&
 			<Onboarding />
 		}
-		{/* {(gameState.status === AppGameState.PREPARING) &&
-			<>
-				<Preparation />
-			</>
-		} */}
 		{(gameState.status === AppGameState.COUNTDOWN) &&
 			<Countdown />
 		}
