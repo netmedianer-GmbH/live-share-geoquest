@@ -1,6 +1,7 @@
-import { FunctionComponent, useContext } from "react"
+import { FunctionComponent, useContext, useEffect } from "react"
 import { AppGameState } from "../utils";
 import { Countdown, Gaming, ILiveGameContext, LiveGameContext, Onboarding, Scoring } from ".";
+import { TTS } from "../utils/tts";
 
 
 type StageWrapperProps = {
@@ -9,7 +10,14 @@ type StageWrapperProps = {
 
 export const StageWrapper: FunctionComponent<StageWrapperProps> = () => {
 
-	const { gameState } = useContext(LiveGameContext) as ILiveGameContext;
+	const { gameState, question } = useContext(LiveGameContext) as ILiveGameContext;
+	const ttsService = new TTS();
+
+	useEffect(() => {
+		if (question && question.question && question.question.length) {
+			ttsService.readQuestion(question.question);
+		}
+	}, [question]);
 
 	return <>
 		{(gameState.status === AppGameState.ONBOARDING) &&
