@@ -1,7 +1,9 @@
-name: Azure Static Web Apps CI/CD
+name: GeoQuest PRODUCTION
 
 on:
   push:
+    paths:
+      - client/**
     branches:
       - master
   pull_request:
