@@ -1,4 +1,4 @@
-![](https://img.shields.io/github/actions/workflow/status/nmtoblum/live-share-geoquest/azure-static-web-apps-brave-rock-018c9b503.yml) [![](https://img.shields.io/github/downloads/nmtoblum/live-share-geoquest/total)](https://github.com/nmtoblum/live-share-geoquest/releases/download/latest/staging.zip) ![](https://img.shields.io/github/issues/nmtoblum/live-share-geoquest) ![](https://img.shields.io/github/license/nmtoblum/live-share-geoquest)
+![](https://img.shields.io/github/actions/workflow/status/nmtoblum/live-share-geoquest/azure-static-web-apps-brave-rock-018c9b503.yml) [![](https://img.shields.io/github/downloads/nmtoblum/live-share-geoquest/total)](https://github.com/nmtoblum/live-share-geoquest/releases/download/latest/production.zip) ![](https://img.shields.io/github/issues/nmtoblum/live-share-geoquest) ![](https://img.shields.io/github/license/nmtoblum/live-share-geoquest)
 
 # GeoQuest
 
@@ -34,7 +34,7 @@ Since the focus is on using the LiveShare SDK, the Teams app was deliberately im
 For more complex scenarios, it is of course possible to use the Teams Toolkit, and this solution can also be migrated to it later without any problems if the additional features of the framework are ever needed.
 
 ### How to use it - _Installation_
-To make the app as easy to use as possible, we set up an automatic deployment of the app via GitHub Action to an Azure Static Web App. From there, it can be used directly. We provide the suitable manifest for download [here](https://github.com/nmtoblum/live-share-geoquest/releases/download/latest/staging.zip). This allows the app to be easily installed in the tenant or side-loaded directly into a meeting. That's it!
+To make the app as easy to use as possible, we set up an automatic deployment of the app via GitHub Action to an Azure Static Web App. From there, it can be used directly. We provide the suitable manifest for download [here](https://github.com/nmtoblum/live-share-geoquest/releases/download/latest/production.zip). This allows the app to be easily installed in the tenant or side-loaded directly into a meeting. That's it!
 > :warning: Please use this package and hosted version only for trying it out and/or demoing the solution. We do not guarentee that it will work forever. Deploy your own version if you want to use it regularly.
 
 ## About us
