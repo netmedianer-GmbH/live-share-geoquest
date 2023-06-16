@@ -1,4 +1,4 @@
-name: Release GeoQuest STAGING
+name: Release GeoQuest
 
 on:
   push:
@@ -23,3 +23,4 @@ jobs:
           automatic_release_tag: "latest"
           files: |
             manifest/staging.zip
+            manifest/production.zip
