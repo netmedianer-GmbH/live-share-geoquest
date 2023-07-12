@@ -5,6 +5,12 @@
 
 A fun geo-guessing game for Microsoft Teams. For example, as an icebreaker, or for small competitions during the work break.
 
+| ![image](https://github.com/nmtoblum/live-share-geoquest/assets/57751598/c029b4b7-0012-4cff-882d-1b9a7e0cee6f) | This project was part of ["HackTogether: The Microsoft Teams Global Hack"](https://github.com/microsoft/hack-together-teams) and was [awarded the special jury prize](https://devblogs.microsoft.com/microsoft365dev/announcing-the-hacktogether-microsoft-teams-global-hack-winners/#%f0%9f%8f%85-one-more-thing-special-jury-picks). |
+| ---- | --- |
+
+
+
+
 ## Demo video
 [![](docs/assets/thumbnail.png)](https://youtu.be/6xYLe0WE0cs)
 
